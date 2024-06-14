@@ -32,6 +32,25 @@
 // }
 
 
+// #Using Switch in conditional statement
+// import java.util.*;
+// public class intro{
+//     public static void main(String[] args){
+//         Scanner sc = new Scanner(System.in);
+//         int a=sc.nextInt();
+//         switch(a){
+//             case 1: System.out.println("Hello");
+//             break;
+//             case 2: System.out.println("Namaste");
+//             break;
+//             case 3: System.out.println("Bonjour");
+//             break;
+//             default : System.out.println("Invalid Button");
+//         }
+//     }
+// }
+
+
 // Print the table of number entered by user using loop
 // import java.util.*;
 // public class intro{
@@ -45,20 +64,16 @@
 // }
 
 
-// #Using Switch in conditional statement
 import java.util.*;
 public class intro{
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+        Scanner sc=new Scanner(System.in);
         int a=sc.nextInt();
-        switch(a){
-            case 1: System.out.println("Hello");
-            break;
-            case 2: System.out.println("Namaste");
-            break;
-            case 3: System.out.println("Bonjour");
-            break;
-            default : System.out.println("Invalid Button");
+        for(int i=1;i<=a;i++){
+            for(int j=1;j<=a+1;j++){
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
 }
