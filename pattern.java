@@ -1,6 +1,6 @@
 // #Rectangle Pattern
 // import java.util.*;
-// public class intro{
+// public class pattern{
 //     public static void main(String[] args){
 //         Scanner sc=new Scanner(System.in);
 //         int a=sc.nextInt();
@@ -16,7 +16,7 @@
 
 // #Hollow Rectangle Pattern
 // import java.util.*;
-// public class intro{
+// public class pattern{
 //     public static void main(String[] args){
 //         Scanner sc=new Scanner(System.in);
 //         int a=sc.nextInt();
@@ -37,7 +37,7 @@
 
 // #Half Pyramid 
 // import java.util.*;
-// public class intro{
+// public class pattern{
 //     public static void main(String[] args){
 //         Scanner sc=new Scanner(System.in);
 //         int a=sc.nextInt();
@@ -53,7 +53,7 @@
 
 // #inverted Half Pyramid 
 // import java.util.*;
-// public class intro{
+// public class pattern{
 //     public static void main(String[] args){
 //         Scanner sc=new Scanner(System.in);
 //         int a=sc.nextInt();
@@ -69,7 +69,7 @@
 
 // #Inverted Half Pyramid
 // import java.util.*;
-// public class intro{
+// public class pattern{
 //     public static void main(String[] args){
 //         Scanner sc=new Scanner(System.in);
 //         int a=sc.nextInt();
@@ -89,7 +89,7 @@
 
 // #half Pyramid With Numbers
 // import java.util.*;
-// public class intro{
+// public class pattern{
 //     public static void main(String[] args){
 //         Scanner sc=new Scanner(System.in);
 //         int a=sc.nextInt();
@@ -105,7 +105,7 @@
 
 // #Inverted Half Pyramid With Numbers
 // import java.util.*;
-// public class intro{
+// public class pattern{
 //     public static void main(String[] args){
 //         Scanner sc=new Scanner(System.in);
 //         int a=sc.nextInt();
@@ -121,7 +121,7 @@
 
 // #Floyd's Triangle
 // import java.util.*;
-// public class intro{
+// public class pattern{
 //     public static void main(String[] args){
 //         Scanner sc=new Scanner(System.in);
 //         int a=sc.nextInt();
@@ -139,7 +139,7 @@
 
 // # 0-1 triangle
 // import java.util.*;
-// public class intro{
+// public class pattern{
 //     public static void main(String[] args){
 //         Scanner sc=new Scanner(System.in);
 //         int a=sc.nextInt();
