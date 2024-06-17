@@ -17,14 +17,21 @@
 // #Add 2 number using functions
 import java.util.*;
 public class Function{
-    public static void addtwonumber(int a,int b){
-        System.out.print(a+b);
+    public static void factorail(int a){
+        if(a<0){
+            System.out.println("Invalid Number");
+            return;
+        }
+        int fact=1;
+        for(int i=a;i>=1;i--){
+            fact=fact*i;
+        }
+        System.out.print(fact);
         return;
     }
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         int a=sc.nextInt();
-        int b=sc.nextInt();
-        addtwonumber(a,b);
+        factorail(a);
     }
 }
