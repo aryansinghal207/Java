@@ -99,20 +99,52 @@
 
 
 // #Write a function that takes in age as input and returns if that person is eligible to vote or not. A person of age > 18 is eligible to vote.
+// import java.util.*;
+// public class Function {
+//     public static boolean Vote(int age) {
+//         return age >= 18;
+//     }
+//     public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
+//         System.out.print("Enter your age: ");
+//         int age = scanner.nextInt();
+//         boolean eligible = Vote(age);
+//         if (eligible) {
+//             System.out.println("You are eligible to vote.");
+//         } else {
+//             System.out.println("You are not eligible to vote.");
+//         }
+//     }
+// }
+
+
+// #Write a program to enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros entered. 
 import java.util.Scanner;
 public class Function {
-    public static boolean Vote(int age) {
-        return age >= 18;
+    public static void countNumbers() {
+        Scanner scanner = new Scanner(System.in);
+        int positiveCount = 0;
+        int negativeCount = 0;
+        int zeroCount = 0;        
+        String choice;
+        do {
+            System.out.print("Enter a number: ");
+            int number = scanner.nextInt();
+            if (number > 0) {
+                positiveCount++;
+            } else if (number < 0) {
+                negativeCount++;
+            } else {
+                zeroCount++;
+            }
+            System.out.print("Do you want to continue? (yes/no): ");
+            choice = scanner.next();
+        } while (choice.equalsIgnoreCase("yes"));
+        System.out.println("Count of positive numbers: " + positiveCount);
+        System.out.println("Count of negative numbers: " + negativeCount);
+        System.out.println("Count of zeros: " + zeroCount);
     }
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your age: ");
-        int age = scanner.nextInt();
-        boolean eligible = Vote(age);
-        if (eligible) {
-            System.out.println("You are eligible to vote.");
-        } else {
-            System.out.println("You are not eligible to vote.");
-        }
+        countNumbers();
     }
 }
