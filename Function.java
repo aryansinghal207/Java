@@ -83,16 +83,36 @@
 
 
 // #Write a function that takes in the radius as input and returns the circumference of a circle.
-import java.util.*;
-public class Function{
-    public static double circumference(double n) {
-        return 2*3.14*n;
+// import java.util.*;
+// public class Function{
+//     public static double circumference(double n) {
+//         return 2*3.14*n;
+//     }
+//     public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
+//         System.out.print("Enter the radius of circle : ");
+//         double n = scanner.nextDouble();
+//         double c = circumference(n);
+//         System.out.println("The circumference of a circle with radius " + n + " is: " + c);
+//     }
+// }
+
+
+// #Write a function that takes in age as input and returns if that person is eligible to vote or not. A person of age > 18 is eligible to vote.
+import java.util.Scanner;
+public class Function {
+    public static boolean Vote(int age) {
+        return age >= 18;
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the radius of circle : ");
-        double n = scanner.nextDouble();
-        double c = circumference(n);
-        System.out.println("The circumference of a circle with radius " + n + " is: " + c);
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+        boolean eligible = Vote(age);
+        if (eligible) {
+            System.out.println("You are eligible to vote.");
+        } else {
+            System.out.println("You are not eligible to vote.");
+        }
     }
 }
