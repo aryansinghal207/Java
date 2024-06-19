@@ -61,22 +61,39 @@
 
 
 // #Write a function which takes in 2 numbers and returns the greater of those two.
+// import java.util.*;
+// public class Function{
+//     public static int findGreater(int a, int b) {
+//         if (a > b) {
+//             return a;
+//         } else {
+//             return b;
+//         }
+//     }
+//     public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
+//         System.out.print("Enter the first number: ");
+//         int num1 = scanner.nextInt();
+//         System.out.print("Enter the second number: ");
+//         int num2 = scanner.nextInt();
+//         int greater = findGreater(num1, num2);
+//         System.out.println("The greater number between " + num1 + " and " + num2 + " is: " + greater);
+//     }
+// }
+
+
+// #Write a function that takes in the radius as input and returns the circumference of a circle.
 import java.util.*;
 public class Function{
-    public static int findGreater(int a, int b) {
-        if (a > b) {
-            return a;
-        } else {
-            return b;
-        }
+    public static double circumference(double n) {
+        return 2*3.14*n;
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the first number: ");
-        int num1 = scanner.nextInt();
-        System.out.print("Enter the second number: ");
-        int num2 = scanner.nextInt();
-        int greater = findGreater(num1, num2);
-        System.out.println("The greater number between " + num1 + " and " + num2 + " is: " + greater);
+        System.out.print("Enter the radius of circle : ");
+        double n = scanner.nextDouble();
+        double c = circumference(n);
+        System.out.println("The circumference of a circle with radius " + n + " is: " + c);
     }
 }
