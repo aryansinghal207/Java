@@ -88,7 +88,6 @@ public class Function{
     public static double circumference(double n) {
         return 2*3.14*n;
     }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the radius of circle : ");
