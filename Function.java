@@ -116,35 +116,3 @@
 //         }
 //     }
 // }
-
-
-// #Write a program to enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros entered. 
-import java.util.Scanner;
-public class Function {
-    public static void countNumbers() {
-        Scanner scanner = new Scanner(System.in);
-        int positiveCount = 0;
-        int negativeCount = 0;
-        int zeroCount = 0;        
-        String choice;
-        do {
-            System.out.print("Enter a number: ");
-            int number = scanner.nextInt();
-            if (number > 0) {
-                positiveCount++;
-            } else if (number < 0) {
-                negativeCount++;
-            } else {
-                zeroCount++;
-            }
-            System.out.print("Do you want to continue? (yes/no): ");
-            choice = scanner.next();
-        } while (choice.equalsIgnoreCase("yes"));
-        System.out.println("Count of positive numbers: " + positiveCount);
-        System.out.println("Count of negative numbers: " + negativeCount);
-        System.out.println("Count of zeros: " + zeroCount);
-    }
-    public static void main(String[] args) {
-        countNumbers();
-    }
-}
