@@ -32,18 +32,19 @@
 // }
 
 // WAP to reverse a Arraylist
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
 public class Arraylist{
-    static void reverselist(ArrayList<Integer> list){
-        int i=0,j=list.size()-1;
-        while(i<j){
-            Integer temp=Integer.valueOf(list.get(i));
-            list.set(i,list.get(j));
-            list.set(j,temp);
-            i++;
-            j--;
-        }
-    }
+    // static void reverselist(ArrayList<Integer> list){
+    //     int i=0,j=list.size()-1;
+    //     while(i<j){
+    //         Integer temp=Integer.valueOf(list.get(i));
+    //         list.set(i,list.get(j));
+    //         list.set(j,temp);
+    //         i++;
+    //         j--;
+    //     }
+    // }
     public static void main(String[] args){
         ArrayList<Integer> l1=new ArrayList<>();
         l1.add(1);
@@ -55,7 +56,9 @@ public class Arraylist{
         l1.add(7);
         l1.add(8);
         System.out.println("Original List : "+l1);
-        reverselist(l1);
+        // reverselist(l1);
+        // We could use predefines library of collection in which we have predefined reverse function
+        Collections.reverse(l1);
         System.out.println("Reversed List : "+l1);
     }
 }
