@@ -21,6 +21,8 @@ public class Arraylist{
         System.out.println(l1);
         l1.add(1,100);
         System.out.println(l1);
+        l1.remove(1);
+        System.out.println(l1);
 
     }
 }
