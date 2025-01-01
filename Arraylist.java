@@ -47,18 +47,22 @@ public class Arraylist{
     // }
     public static void main(String[] args){
         ArrayList<Integer> l1=new ArrayList<>();
-        l1.add(1);
-        l1.add(2);
-        l1.add(3);
-        l1.add(4);
         l1.add(5);
         l1.add(6);
         l1.add(7);
         l1.add(8);
+        l1.add(1);
+        l1.add(2);
+        l1.add(3);
+        l1.add(4);
         System.out.println("Original List : "+l1);
         // reverselist(l1);
         // We could use predefines library of collection in which we have predefined reverse function
         Collections.reverse(l1);
+        System.out.println("Reversed List : "+l1);
+        Collections.sort(l1);
+        System.out.println("Reversed List : "+l1);
+        Collections.sort(l1,Collections.reverseOrder());
         System.out.println("Reversed List : "+l1);
     }
 }
