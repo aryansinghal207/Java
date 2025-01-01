@@ -26,5 +26,7 @@ public class Arraylist{
         System.out.println(l1.remove(Integer.valueOf(6)));   // To remove any value from arraylist and print use kara ha check karne ka liye ki element exist bhi karta ha ki nhu
         System.out.println(l1);
         System.out.println(l1.remove(Integer.valueOf(6))); 
+        Boolean ans=l1.contains(Integer.valueOf(7));
+        System.out.println(ans);
     }
 }
