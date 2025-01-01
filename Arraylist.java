@@ -21,8 +21,10 @@ public class Arraylist{
         System.out.println(l1);
         l1.add(1,100);
         System.out.println(l1);
-        l1.remove(1);
+        l1.remove(1);   // To remove any index value from arraylist
         System.out.println(l1);
-
+        System.out.println(l1.remove(Integer.valueOf(6)));   // To remove any value from arraylist and print use kara ha check karne ka liye ki element exist bhi karta ha ki nhu
+        System.out.println(l1);
+        System.out.println(l1.remove(Integer.valueOf(6))); 
     }
 }
