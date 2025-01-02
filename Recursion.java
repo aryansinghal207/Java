@@ -38,25 +38,48 @@
 // }
 
 
-// WAP to print factorail of any number.
+// // WAP to print factorail of any number.
+// import java.util.*;
+// public class Recursion{
+//     static int fact(int n){
+//         if(n<0){
+//             return -1;
+//         }
+//         else if(n==0){
+//             return 1;
+//         }
+//         int result=n*fact(n-1);
+//         return result;
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         int answer=fact(n);
+//         System.out.println(answer);
+//     }
+// }
+
+
+// WAP to print fibonacci number at a position.
 import java.util.*;
 public class Recursion{
-    static int fact(int n){
+    static int fibo(int n){
         if(n<0){
-            return 0;
+            return -1;
         }
         else if(n==0){
+            return 0;
+        }
+        else if(n==1){
             return 1;
         }
-        int result=n*fact(n-1);
+        int result=fibo(n-1)+fibo(n-2);
         return result;
     }
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        int answer=fact(n);
+        int answer=fibo(n);
         System.out.println(answer);
     }
 }
-
-
