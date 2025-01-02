@@ -45,7 +45,7 @@ public class Recursion{
         if(n<0){
             return 0;
         }
-        else if(n==0 || n==1){
+        else if(n==0){
             return 1;
         }
         int result=n*fact(n-1);
@@ -58,3 +58,5 @@ public class Recursion{
         System.out.println(answer);
     }
 }
+
+
