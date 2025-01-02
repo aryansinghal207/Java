@@ -1,4 +1,5 @@
 // A Function calling itself
+// WAP to print from 1 to n.
 import java.util.*;
 public class Recursion{
     static void print(int n){
