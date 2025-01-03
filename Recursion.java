@@ -78,14 +78,38 @@
 // }
 
 
-// WAP to find the value of p^q using recursion.
+// // WAP to find the value of p^q using recursion.
+// import java.util.*;
+// public class Recursion{
+//     static int result(int p,int q){
+//         if(q==0){
+//             return 1;
+//         }
+//         return result(p,q-1)*p;
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         int m=sc.nextInt();
+//         int answer=result(n,m);
+//         System.out.println(answer);
+//     }
+// }
+// //or
 import java.util.*;
 public class Recursion{
     static int result(int p,int q){
         if(q==0){
             return 1;
         }
-        return result(p,q-1)*p;
+        if(q%2==0){
+            int small=result(p,q/2);
+            return small*small;
+        }
+        else{
+            int small=result(p,q/2);
+            return p*small*small;
+        }
     }
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
