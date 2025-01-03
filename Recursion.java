@@ -60,19 +60,21 @@
 // }
 
 
-// WAP to print fibonacci number at a position.
-import java.util.*;
-public class Recursion{
-    static int sumofdigits(int n){
-        if(n>=0 && n<=9){
-            return n;
-        }
-        return sumofdigits(n/10)+n%10;
-    }
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int answer=sumofdigits(n);
-        System.out.println(answer);
-    }
-}
+// // WAP to print fibonacci number at a position.
+// import java.util.*;
+// public class Recursion{
+//     static int sumofdigits(int n){
+//         if(n>=0 && n<=9){
+//             return n;
+//         }
+//         return sumofdigits(n/10)+n%10;
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         int answer=sumofdigits(n);
+//         System.out.println(answer);
+//     }
+// }
+
+
