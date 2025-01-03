@@ -140,24 +140,24 @@
 // }
 
 
-// WAP to print the sum of numbers with alternate sign
-import java.util.*;
-public class Recursion{
-    static int result(int n){
-        if(n==0){
-            return n;
-        }
-        if(n%2==0){
-            return result(n-1)-n; 
-        }
-        else{
-            return result(n-1)+n;
-        }
-    }
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int ans=result(n);
-        System.out.print(ans);
-    }
-}
+// // WAP to print the sum of numbers with alternate sign
+// import java.util.*;
+// public class Recursion{
+//     static int result(int n){
+//         if(n==0){
+//             return n;
+//         }
+//         if(n%2==0){
+//             return result(n-1)-n; 
+//         }
+//         else{
+//             return result(n-1)+n;
+//         }
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         int ans=result(n);
+//         System.out.print(ans);
+//     }
+// }
