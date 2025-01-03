@@ -63,23 +63,16 @@
 // WAP to print fibonacci number at a position.
 import java.util.*;
 public class Recursion{
-    static int fibo(int n){
-        if(n<0){
-            return -1;
+    static int sumofdigits(int n){
+        if(n>=0 && n<=9){
+            return n;
         }
-        else if(n==0){
-            return 0;
-        }
-        else if(n==1){
-            return 1;
-        }
-        int result=fibo(n-1)+fibo(n-2);
-        return result;
+        return sumofdigits(n/10)+n%10;
     }
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        int answer=fibo(n);
+        int answer=sumofdigits(n);
         System.out.println(answer);
     }
 }
