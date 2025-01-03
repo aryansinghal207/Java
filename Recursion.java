@@ -121,3 +121,5 @@
 // }
 
 
+// Print the k times multiple value of n number
+ 
