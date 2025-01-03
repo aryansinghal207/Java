@@ -96,26 +96,28 @@
 //     }
 // }
 // //or
-import java.util.*;
-public class Recursion{
-    static int result(int p,int q){
-        if(q==0){
-            return 1;
-        }
-        if(q%2==0){
-            int small=result(p,q/2);
-            return small*small;
-        }
-        else{
-            int small=result(p,q/2);
-            return p*small*small;
-        }
-    }
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int m=sc.nextInt();
-        int answer=result(n,m);
-        System.out.println(answer);
-    }
-}
+// import java.util.*;
+// public class Recursion{
+//     static int result(int p,int q){
+//         if(q==0){
+//             return 1;
+//         }
+//         if(q%2==0){
+//             int small=result(p,q/2);
+//             return small*small;
+//         }
+//         else{
+//             int small=result(p,q/2);
+//             return p*small*small;
+//         }
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         int m=sc.nextInt();
+//         int answer=result(n,m);
+//         System.out.println(answer);
+//     }
+// }
+
+
