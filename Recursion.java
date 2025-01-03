@@ -121,20 +121,43 @@
 // }
 
 
-// Print the k times multiple value of n number
+// // Print the k times multiple value of n number
+// import java.util.*;
+// public class Recursion{
+//     static void result(int p,int q){
+//         if(q==0){
+//             return;
+//         }
+//         result(p,q-1);
+//         System.out.print(p*q+" ");        
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         int m=sc.nextInt();
+//         result(n,m);
+//     }
+// }
+
+
+// WAP to print the sum of numbers with alternate sign
 import java.util.*;
 public class Recursion{
-    static void result(int p,int q){
-        if(q==0){
-            return;
+    static int result(int n){
+        if(n==0){
+            return n;
         }
-        result(p,q-1);
-        System.out.print(p*q+" ");        
+        if(n%2==0){
+            return result(n-1)-n; 
+        }
+        else{
+            return result(n-1)+n;
+        }
     }
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        int m=sc.nextInt();
-        result(n,m);
+        int ans=result(n);
+        System.out.print(ans);
     }
 }
