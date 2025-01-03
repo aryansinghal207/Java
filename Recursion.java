@@ -122,4 +122,19 @@
 
 
 // Print the k times multiple value of n number
- 
+import java.util.*;
+public class Recursion{
+    static void result(int p,int q){
+        if(q==0){
+            return;
+        }
+        result(p,q-1);
+        System.out.print(p*q+" ");        
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        result(n,m);
+    }
+}
