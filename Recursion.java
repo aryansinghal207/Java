@@ -203,18 +203,36 @@
 // }
 
 
-// WAP to print all the value array recursively.
+// // WAP to print all the value array recursively.
+// import java.util.*;
+// public class Recursion{
+//     public static void printArray(int[] x,int y){
+//         if(y==x.length){
+//             return;
+//         }
+//         System.out.print(x[y]+" ");
+//         printArray(x,y+1);
+//     }
+//     public static void main(String[] args){
+//         int [] arr={1,2,3,4,5};
+//         printArray(arr,0);
+//     }
+// }
+
+
+// WAP to print the maximum element from array using recursion
 import java.util.*;
-public class Recursion{
-    public static void printArray(int[] x,int y){
-        if(y==x.length){
-            return;
+public class Recursion {
+    public static int findMax(int[] x, int y) {
+        if (y == x.length - 1) {
+            return x[y];
         }
-        System.out.print(x[y]+" ");
-        printArray(x,y+1);
+        int maxInRest = findMax(x, y + 1);
+        return Math.max(x[y], maxInRest);
     }
-    public static void main(String[] args){
-        int [] arr={1,2,3,4,5};
-        printArray(arr,0);
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int maxElement = findMax(arr, 0);
+        System.out.println("The maximum element is: " + maxElement);
     }
 }
