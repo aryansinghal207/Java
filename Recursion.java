@@ -220,19 +220,36 @@
 // }
 
 
-// WAP to print the maximum element from array using recursion
+// // WAP to print the maximum element from array using recursion
+// import java.util.*;
+// public class Recursion {
+//     public static int findMax(int[] x, int y) {
+//         if (y == x.length - 1) {
+//             return x[y];
+//         }
+//         int maxInRest = findMax(x, y + 1);
+//         return Math.max(x[y], maxInRest);
+//     }
+//     public static void main(String[] args) {
+//         int[] arr = {1, 2, 3, 4, 5};
+//         int maxElement = findMax(arr, 0);
+//         System.out.println("The maximum element is: " + maxElement);
+//     }
+// }
+
+
+// WAP to find sum of all element of an array
 import java.util.*;
 public class Recursion {
-    public static int findMax(int[] x, int y) {
-        if (y == x.length - 1) {
-            return x[y];
+    public static int sum(int[] x, int y) {
+        if (y == x.length) {
+            return 0;
         }
-        int maxInRest = findMax(x, y + 1);
-        return Math.max(x[y], maxInRest);
+        return x[y] + sum(x, y + 1);
     }
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5};
-        int maxElement = findMax(arr, 0);
-        System.out.println("The maximum element is: " + maxElement);
+        int result=sum(arr, 0);
+        System.out.print(result);
     }
 }
