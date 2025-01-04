@@ -27,17 +27,43 @@
 // }
 
 
-// WAP to print weather x exist in an array if yes the return index of that otherwise return -1.
+// // WAP to print weather a element exist in an array or not if it exist the return index of that otherwise return -1.
+// import java.util.Scanner;
+// public class Recursion2 {
+//     static int findnum(int[] arr, int target, int size, int index) {
+//         if (index >= size) {
+//             return -1;
+//         }
+//         if (arr[index] == target) {
+//             return index;
+//         }
+//         return findnum(arr, target, size, index + 1);
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         int size = sc.nextInt();
+//         int[] arr = new int[size];
+//         for (int i = 0; i < size; i++) {
+//             arr[i] = sc.nextInt();
+//         }
+//         int target = sc.nextInt();
+//         int result=findnum(arr, target, size, 0);
+//         System.out.print(result);
+//     }
+// }
+
+
+// WAP to print weather x exist in an array if yes the return all index of that otherwise return -1.
 import java.util.Scanner;
 public class Recursion2 {
-    static int findnum(int[] arr, int target, int size, int index) {
+    static void printallindexes(int[] arr, int target, int size, int index) {
         if (index >= size) {
-            return -1;
+            return ;
         }
         if (arr[index] == target) {
-            return index;
+            System.out.print(index+" ");
         }
-        return findnum(arr, target, size, index + 1);
+        printallindexes(arr, target, size, index + 1);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -47,7 +73,6 @@ public class Recursion2 {
             arr[i] = sc.nextInt();
         }
         int target = sc.nextInt();
-        int result=findnum(arr, target, size, 0);
-        System.out.print(result);
+        printallindexes(arr, target, size, 0);
     }
 }
