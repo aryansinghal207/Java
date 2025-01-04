@@ -53,17 +53,45 @@
 // }
 
 
-// WAP to print weather x exist in an array if yes the return all index of that otherwise return -1.
-import java.util.Scanner;
+// // WAP to print weather x exist in an array if yes the return all index of that otherwise return -1.
+// import java.util.Scanner;
+// public class Recursion2 {
+//     static void printallindexes(int[] arr, int target, int size, int index) {
+//         if (index >= size) {
+//             return ;
+//         }
+//         if (arr[index] == target) {
+//             System.out.print(index+" ");
+//         }
+//         printallindexes(arr, target, size, index + 1);
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         int size = sc.nextInt();
+//         int[] arr = new int[size];
+//         for (int i = 0; i < size; i++) {
+//             arr[i] = sc.nextInt();
+//         }
+//         int target = sc.nextInt();
+//         printallindexes(arr, target, size, 0);
+//     }
+// }
+
+
+// WAP to print weather x exist in an array if yes the return all index of that otherwise return -1 in Array Form.
+import java.util.*;
 public class Recursion2 {
-    static void printallindexes(int[] arr, int target, int size, int index) {
+    static ArrayList<Integer> printallindexes(int[] arr, int target, int size, int index) {
+        ArrayList<Integer> ans=new ArrayList<Integer>();
         if (index >= size) {
-            return ;
+            return ans;
         }
         if (arr[index] == target) {
-            System.out.print(index+" ");
+            ans.add(index);
         }
-        printallindexes(arr, target, size, index + 1);
+        ArrayList<Integer> SmallAns=printallindexes(arr, target, size, index + 1);
+        ans.addAll(SmallAns);
+        return ans;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -73,6 +101,11 @@ public class Recursion2 {
             arr[i] = sc.nextInt();
         }
         int target = sc.nextInt();
-        printallindexes(arr, target, size, 0);
+        ArrayList<Integer> ans=printallindexes(arr, target, size, 0);
+        if (ans.isEmpty()) {
+            System.out.println("[-1]");
+        } else {
+            System.out.println(ans);
+        }
     }
 }
