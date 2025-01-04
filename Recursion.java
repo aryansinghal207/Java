@@ -184,7 +184,7 @@
 //     }
 // }
 
-// 
+// Euclid's Algorithum
 import java.util.*;
 public class Recursion{
     public static int gcd(int x,int y){
