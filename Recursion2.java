@@ -111,17 +111,45 @@
 // }
 
 
-// WAP to check weather a given array is sorted or not
+// // WAP to check weather a given array is sorted or not
+// import java.util.Scanner;
+// public class Recursion2 {
+//     static boolean issorted(int[] arr,int size, int index) {
+//         if (index == size-1) {
+//             return true;
+//         }
+//         if (arr[index] > arr[index+1]) {
+//             return false;
+//         }
+//         return issorted(arr, size, index + 1);
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         int size = sc.nextInt();
+//         int[] arr = new int[size];
+//         for (int i = 0; i < size; i++) {
+//             arr[i] = sc.nextInt();
+//         }
+//         if (issorted(arr, size, 0)) {
+//             System.out.println("Yes");
+//         } else {
+//             System.out.println("No");
+//         }
+//     }
+// }
+
+
+// WAP To find last index of target in array
 import java.util.Scanner;
 public class Recursion2 {
-    static boolean issorted(int[] arr,int size, int index) {
-        if (index == size-1) {
-            return true;
+    static int findnum(int[] arr, int target, int size, int index) {
+        if (index >= size) {
+            return -1;
         }
-        if (arr[index] > arr[index+1]) {
-            return false;
+        if (arr[index] == target) {
+            return index;
         }
-        return issorted(arr, size, index + 1);
+        return findnum(arr, target, size, index - 1);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -130,10 +158,8 @@ public class Recursion2 {
         for (int i = 0; i < size; i++) {
             arr[i] = sc.nextInt();
         }
-        if (issorted(arr, size, 0)) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
+        int target = sc.nextInt();
+        int result=findnum(arr, target, size, size-1);
+        System.out.print(result);
     }
 }
