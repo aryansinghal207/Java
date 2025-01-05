@@ -40,7 +40,23 @@
 // }
 
 
-// WAP to reverse a string using recursion
+// // WAP to reverse a string using recursion
+// import java.util.*;
+// public class Recursionstrings{
+//     static String reverse(String s,int idx){
+//         if(idx==s.length()) return "";
+//         String smallAns=reverse(s,idx+1);
+//         return smallAns+s.charAt(idx);     
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         String s=sc.nextLine();
+//         System.out.print(reverse(s,0));
+//     }
+// }
+
+
+// WAP to check wether a string is palindrome or not using recursion
 import java.util.*;
 public class Recursionstrings{
     static String reverse(String s,int idx){
@@ -51,6 +67,12 @@ public class Recursionstrings{
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         String s=sc.nextLine();
-        System.out.print(reverse(s,0));
+        String rev=reverse(s,0);
+        if(rev.equals(s)){
+            System.out.print("Yes this is palindrome");
+        } 
+        else{
+            System.out.print("No this is not a palindrome");
+        }      
     }
 }
