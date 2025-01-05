@@ -78,20 +78,50 @@
 // }
 
 
-// WAP to print weather x exist in an array if yes the return all index of that otherwise return -1 in Array Form.
-import java.util.*;
+// // WAP to print weather x exist in an array if yes the return all index of that otherwise return -1 in Array Form.
+// import java.util.*;
+// public class Recursion2 {
+//     static ArrayList<Integer> printallindexes(int[] arr, int target, int size, int index) {
+//         ArrayList<Integer> ans=new ArrayList<Integer>();
+//         if (index >= size) {
+//             return ans;
+//         }
+//         if (arr[index] == target) {
+//             ans.add(index);
+//         }
+//         ArrayList<Integer> SmallAns=printallindexes(arr, target, size, index + 1);
+//         ans.addAll(SmallAns);
+//         return ans;
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         int size = sc.nextInt();
+//         int[] arr = new int[size];
+//         for (int i = 0; i < size; i++) {
+//             arr[i] = sc.nextInt();
+//         }
+//         int target = sc.nextInt();
+//         ArrayList<Integer> ans=printallindexes(arr, target, size, 0);
+//         if (ans.isEmpty()) {
+//             System.out.println("[-1]");
+//         } else {
+//             System.out.println(ans);
+//         }
+//     }
+// }
+
+
+// WAP to check weather a given array is sorted or not
+import java.util.Scanner;
 public class Recursion2 {
-    static ArrayList<Integer> printallindexes(int[] arr, int target, int size, int index) {
-        ArrayList<Integer> ans=new ArrayList<Integer>();
-        if (index >= size) {
-            return ans;
+    static boolean issorted(int[] arr,int size, int index) {
+        if (index == size-1) {
+            return true;
         }
-        if (arr[index] == target) {
-            ans.add(index);
+        if (arr[index] > arr[index+1]) {
+            return false;
         }
-        ArrayList<Integer> SmallAns=printallindexes(arr, target, size, index + 1);
-        ans.addAll(SmallAns);
-        return ans;
+        return issorted(arr, size, index + 1);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -100,12 +130,10 @@ public class Recursion2 {
         for (int i = 0; i < size; i++) {
             arr[i] = sc.nextInt();
         }
-        int target = sc.nextInt();
-        ArrayList<Integer> ans=printallindexes(arr, target, size, 0);
-        if (ans.isEmpty()) {
-            System.out.println("[-1]");
+        if (issorted(arr, size, 0)) {
+            System.out.println("Yes");
         } else {
-            System.out.println(ans);
+            System.out.println("No");
         }
     }
 }
