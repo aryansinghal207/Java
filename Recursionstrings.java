@@ -56,23 +56,47 @@
 // }
 
 
-// WAP to check wether a string is palindrome or not using recursion
+// // WAP to check wether a string is palindrome or not using recursion
+// import java.util.*;
+// public class Recursionstrings{
+//     static String reverse(String s,int idx){
+//         if(idx==s.length()) return "";
+//         String smallAns=reverse(s,idx+1);
+//         return smallAns+s.charAt(idx);     
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         String s=sc.nextLine();
+//         String rev=reverse(s,0);
+//         if(rev.equals(s)){
+//             System.out.print("Yes this is palindrome");
+//         } 
+//         else{
+//             System.out.print("No this is not a palindrome");
+//         }      
+//     }
+// }
+// // or
 import java.util.*;
-public class Recursionstrings{
-    static String reverse(String s,int idx){
-        if(idx==s.length()) return "";
-        String smallAns=reverse(s,idx+1);
-        return smallAns+s.charAt(idx);     
+public class Recursionstrings {
+    public static boolean isPalindrome(char[] str, int start, int end) {
+        if (start >= end) {
+            return true;
+        }
+        if (str[start] != str[end]) {
+            return false;
+        }
+        return isPalindrome(str, start + 1, end - 1);
     }
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        String s=sc.nextLine();
-        String rev=reverse(s,0);
-        if(rev.equals(s)){
-            System.out.print("Yes this is palindrome");
-        } 
-        else{
-            System.out.print("No this is not a palindrome");
-        }      
+        String input=sc.nextLine();
+        char[] str = input.toCharArray();
+        boolean result = isPalindrome(str, 0, str.length - 1);
+        if (result) {
+            System.out.println("The string \"" + input + "\" is a palindrome.");
+        } else {
+            System.out.println("The string \"" + input + "\" is not a palindrome.");
+        }
     }
 }
