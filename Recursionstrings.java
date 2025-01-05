@@ -18,4 +18,23 @@
 //         System.out.print(remove(s,0));
 //     }
 // }
-
+// // Alternate Way
+import java.util.*;
+public class Recursionstrings{
+    static String remove2(String s){
+        if(s.length()==0) return "";
+        String smallAns=remove2(s.substring(1));
+        char c=s.charAt(0);
+        if(c!='a'&&c!='A'){
+            return c+smallAns;
+        }
+        else{
+            return smallAns;
+        }
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        System.out.print(remove2(s));
+    }
+}
