@@ -139,27 +139,29 @@
 // }
 
 
-// WAP To find last index of target in array
-import java.util.Scanner;
-public class Recursion2 {
-    static int findnum(int[] arr, int target, int size, int index) {
-        if (index >= size) {
-            return -1;
-        }
-        if (arr[index] == target) {
-            return index;
-        }
-        return findnum(arr, target, size, index - 1);
-    }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int size = sc.nextInt();
-        int[] arr = new int[size];
-        for (int i = 0; i < size; i++) {
-            arr[i] = sc.nextInt();
-        }
-        int target = sc.nextInt();
-        int result=findnum(arr, target, size, size-1);
-        System.out.print(result);
-    }
-}
+// // WAP To find last index of target in array
+// import java.util.Scanner;
+// public class Recursion2 {
+//     static int findnum(int[] arr, int target, int size, int index) {
+//         if (index >= size) {
+//             return -1;
+//         }
+//         if (arr[index] == target) {
+//             return index;
+//         }
+//         return findnum(arr, target, size, index - 1);
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         int size = sc.nextInt();
+//         int[] arr = new int[size];
+//         for (int i = 0; i < size; i++) {
+//             arr[i] = sc.nextInt();
+//         }
+//         int target = sc.nextInt();
+//         int result=findnum(arr, target, size, size-1);
+//         System.out.print(result);
+//     }
+// }
+
+
