@@ -19,22 +19,38 @@
 //     }
 // }
 // // Alternate Way
+// import java.util.*;
+// public class Recursionstrings{
+//     static String remove2(String s){
+//         if(s.length()==0) return "";
+//         String smallAns=remove2(s.substring(1));
+//         char c=s.charAt(0);
+//         if(c!='a'&&c!='A'){
+//             return c+smallAns;
+//         }
+//         else{
+//             return smallAns;
+//         }
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         String s=sc.nextLine();
+//         System.out.print(remove2(s));
+//     }
+// }
+
+
+// WAP to reverse a string using recursion
 import java.util.*;
 public class Recursionstrings{
-    static String remove2(String s){
-        if(s.length()==0) return "";
-        String smallAns=remove2(s.substring(1));
-        char c=s.charAt(0);
-        if(c!='a'&&c!='A'){
-            return c+smallAns;
-        }
-        else{
-            return smallAns;
-        }
+    static String reverse(String s,int idx){
+        if(idx==s.length()) return "";
+        String smallAns=reverse(s,idx+1);
+        return smallAns+s.charAt(idx);     
     }
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         String s=sc.nextLine();
-        System.out.print(remove2(s));
+        System.out.print(reverse(s,0));
     }
 }
