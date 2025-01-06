@@ -102,27 +102,48 @@
 // }
 
 
-// WAP to print the substring of a String
-import java.util.*;
-public class Recursionstrings {
-    public static ArrayList<String> getsubstring(String s){
-        ArrayList<String> ans=new ArrayList<>();
-        if(s.length()==0){
-            ans.add("");
-            return ans;
+// // WAP to print the substring of a String
+// import java.util.*;
+// public class Recursionstrings {
+//     public static ArrayList<String> getsubstring(String s){
+//         ArrayList<String> ans=new ArrayList<>();
+//         if(s.length()==0){
+//             ans.add("");
+//             return ans;
+//         }
+//         char curr=s.charAt(0);
+//         ArrayList<String> smallAns=getsubstring(s.substring(1));
+//         for(String ss:smallAns){
+//             ans.add(ss);
+//             ans.add(curr + ss);
+//         }
+//         return ans;
+//     }
+//     public static void main(String[] args) {
+//         ArrayList<String> ans=getsubstring("abc");
+//         for(String ss: ans){
+//             System.out.println(ss);
+//         }
+//     }
+// }
+
+
+// WAP to print all subsequence in java using recursion
+import java.util.Scanner;
+public class Recursionstrings{
+    private static void printSubsequences(String str, String current, int index) {
+        if (index == str.length()) {
+            System.out.println(current);
+            return;
         }
-        char curr=s.charAt(0);
-        ArrayList<String> smallAns=getsubstring(s.substring(1));
-        for(String ss:smallAns){
-            ans.add(ss);
-            ans.add(curr + ss);
-        }
-        return ans;
+        printSubsequences(str, current + str.charAt(index), index + 1);
+        printSubsequences(str, current, index + 1);
     }
     public static void main(String[] args) {
-        ArrayList<String> ans=getsubstring("abc");
-        for(String ss: ans){
-            System.out.println(ss);
-        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = scanner.nextLine();
+        System.out.println("All subsequences are:");
+        printSubsequences(str, "", 0);
     }
 }
