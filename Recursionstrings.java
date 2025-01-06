@@ -128,22 +128,48 @@
 // }
 
 
-// WAP to print all subsequence in java using recursion
-import java.util.Scanner;
-public class Recursionstrings{
-    private static void printSubsequences(String str, String current, int index) {
-        if (index == str.length()) {
-            System.out.println(current);
-            return;
-        }
-        printSubsequences(str, current + str.charAt(index), index + 1);
-        printSubsequences(str, current, index + 1);
-    }
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a string: ");
-        String str = scanner.nextLine();
-        System.out.println("All subsequences are:");
-        printSubsequences(str, "", 0);
-    }
-}
+// // WAP to print all subsequence in java using recursion
+// import java.util.Scanner;
+// public class Recursionstrings{
+//     private static void printSubsequences(String str, String current, int index) {
+//         if (index == str.length()) {
+//             System.out.println(current);
+//             return;
+//         }
+//         printSubsequences(str, current + str.charAt(index), index + 1);
+//         printSubsequences(str, current, index + 1);
+//     }
+//     public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
+//         System.out.print("Enter a string: ");
+//         String str = scanner.nextLine();
+//         System.out.println("All subsequences are:");
+//         printSubsequences(str, "", 0);
+//     }
+// }
+
+// // WAP to print sum of all subsequence in java using recursion
+// import java.util.Scanner;
+// public class Recursionstrings{
+//     private static void findSubsequenceSum(int[] array, int index, int currentSum, int[] totalSum) {
+//         if (index == array.length) {
+//             totalSum[0] += currentSum;
+//             return;
+//         }
+//         findSubsequenceSum(array, index + 1, currentSum + array[index], totalSum);
+//         findSubsequenceSum(array, index + 1, currentSum, totalSum);
+//     }
+//     public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
+//         System.out.print("Enter the size of the array: ");
+//         int n = scanner.nextInt();
+//         int[] array = new int[n];
+//         System.out.println("Enter the elements of the array:");
+//         for (int i = 0; i < n; i++) {
+//             array[i] = scanner.nextInt();
+//         }
+//         int[] totalSum = {0};
+//         findSubsequenceSum(array, 0, 0, totalSum);
+//         System.out.println("Sum of all subsequences: " + totalSum[0]);
+//     }
+// }
