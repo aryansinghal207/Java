@@ -26,7 +26,7 @@
 // }
 
 
-// Optimal Approach of the previous code 
+// Optimal Approach of the previous code for best case only
 import java.util.Scanner;
 public class Bubblesort{
     static void sort(int[] a,int n) {
