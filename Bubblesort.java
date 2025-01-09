@@ -1,3 +1,6 @@
+// Bubblesort is a stable sort and in-place algorithm
+// Best case Timecomplexity is O(n),Average case Timecomplexity is (n^2), Worst case Timecomplexity is (n^2).
+
 // import java.util.Scanner;
 // public class Bubblesort{
 //     static void sort(int[] a,int n) {
@@ -58,5 +61,3 @@ public class Bubblesort{
         }
     }
 }
-
-// Bubblesort is a stable sort and in-place algorithm
