@@ -1,6 +1,6 @@
 // Space Complexity of this is O(1)
 // Time Complexity of this is O(n^2)
-
+// This is not stable sort
 
 import java.util.Scanner;
 public class Selectionsort{
