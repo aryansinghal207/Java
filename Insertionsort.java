@@ -1,3 +1,4 @@
+// In this algo we check the previous element it is greater then we swap
 // Best Case TimeComplexity is O(n).
 // Average Case TimeComplexity is O(n^2).
 // Worst Case TimeComplexity is O(n^2).

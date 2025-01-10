@@ -1,3 +1,4 @@
+// In this algo we choose first element as min and check is further element is smaller then we swap
 // Space Complexity of this is O(1)
 // Time Complexity of this is O(n^2)
 // This is not stable sort
