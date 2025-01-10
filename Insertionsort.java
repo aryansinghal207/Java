@@ -3,6 +3,7 @@
 // Worst Case TimeComplexity is O(n^2).
 // Space complexity is O(1).
 // It is in-place
+// It is Stable also.
 
 import java.util.Scanner;
 public class Insertionsort{
