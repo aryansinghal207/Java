@@ -1,3 +1,7 @@
+// Time Complexity of this is (nlogn)
+// This is not in-place alog
+// This is stable
+
 import java.util.Scanner;
 public class Mergesort{ 
     static void merge(int[] arr,int l,int mid,int r){
