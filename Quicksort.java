@@ -1,8 +1,11 @@
 import java.util.Scanner;
 public class Quicksort{ 
-    static void sort(int[] arr){
-        
+    static void swap(int[] arr,int x,int y){
+        int temp=arr[x];
+        arr[x]=arr[y];
+        arr[y]=temp;
     }
+    
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         int size=sc.nextInt();
