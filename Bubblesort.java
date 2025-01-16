@@ -1,6 +1,7 @@
 // In this algo we check the next element is it is smaller then we swap the elements 
 // Bubblesort is a stable sort and in-place algorithm
-// Best case Timecomplexity is O(n),Average case Timecomplexity is (n^2), Worst case Timecomplexity is (n^2).
+// Best case Timecomplexity is O(n^2),Average case Timecomplexity is (n^2), Worst case Timecomplexity is (n^2).
+// In modified code only Best case Timecomplexity is O(n),Average case Timecomplexity is (n^2), Worst case Timecomplexity is (n^2).
 // Space Complexity is O(1)
 
 // import java.util.Scanner;
