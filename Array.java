@@ -655,28 +655,28 @@
 // }
 
 
-import java.util.*;
-public class lec3 {
-    public static void subarray(int[] arr) {
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            int sum = 0;
-            for (int j = i; j < arr.length; j++) {
-                sum += arr[j];
-                if (sum > max) {
-                    max = sum;
-                }
-                if (sum < min) {
-                    min = sum;
-                }
-            }
-        }
-        System.out.println("The maximum sum of a subarray is: " + max);
-        System.out.println("The minimum sum of a subarray is: " + min);
-    }
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3};
-        subarray(arr);
-    }
-}
+// import java.util.*;
+// public class lec3 {
+//     public static void subarray(int[] arr) {
+//         int max = Integer.MIN_VALUE;
+//         int min = Integer.MAX_VALUE;
+//         for (int i = 0; i < arr.length; i++) {
+//             int sum = 0;
+//             for (int j = i; j < arr.length; j++) {
+//                 sum += arr[j];
+//                 if (sum > max) {
+//                     max = sum;
+//                 }
+//                 if (sum < min) {
+//                     min = sum;
+//                 }
+//             }
+//         }
+//         System.out.println("The maximum sum of a subarray is: " + max);
+//         System.out.println("The minimum sum of a subarray is: " + min);
+//     }
+//     public static void main(String[] args) {
+//         int[] arr = {1, 2, 3};
+//         subarray(arr);
+//     }
+// }
