@@ -5,6 +5,7 @@
 // Space complexity is O(1).
 // It is in-place
 // It is Stable also.
+// Yeah cards ki tarah hota ha like hmm aapne cards ko sorted order m set karke rakhna cahte ha in the same way hm ek index se check karenge ke usse pechle wala element usee chota to nhi ha or aagar ha to swap karte rehte ha.
 
 import java.util.Scanner;
 public class Insertionsort{
