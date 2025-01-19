@@ -3,6 +3,7 @@
 // Time Complexity of this is O(n^2)
 // This is not stable sort
 // This is in-place
+// In this algo we consider first element as minimum and check upto last and if element is smaller than min then we swap and increment the min value to next index.
 
 import java.util.Scanner;
 public class Selectionsort{
