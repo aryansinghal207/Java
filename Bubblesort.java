@@ -3,6 +3,7 @@
 // Best case Timecomplexity is O(n^2),Average case Timecomplexity is (n^2), Worst case Timecomplexity is (n^2).
 // In modified code only Best case Timecomplexity is O(n),Average case Timecomplexity is (n^2), Worst case Timecomplexity is (n^2).
 // Space Complexity is O(1)
+// In this algo we check the further element is greter or smaller if smaller then we swap.
 
 // import java.util.Scanner;
 // public class Bubblesort{
