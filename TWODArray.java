@@ -380,62 +380,64 @@
 //     }
 // }
 
-import java.util.*;
-public class TWODArray {
-    static int[][] computePrefixSum(int[][] matrix) {
-        int r = matrix.length;
-        int c = matrix[0].length;
-        int[][] prefixSum = new int[r][c];
-        for (int i = 0; i < r; i++) {
-            for (int j = 0; j < c; j++) {
-                prefixSum[i][j] = matrix[i][j];
-                if (i > 0) {
-                    prefixSum[i][j] += prefixSum[i - 1][j];
-                }
-                if (j > 0) {
-                    prefixSum[i][j] += prefixSum[i][j - 1];
-                }
-                if (i > 0 && j > 0) {
-                    prefixSum[i][j] -= prefixSum[i - 1][j - 1];
-                }
-            }
-        }
-        return prefixSum;
-    }
-    static int findSum(int[][] prefixSum, int l1, int r1, int l2, int r2) {
-        int sum = prefixSum[l2][r2];
-        int up = (l1 > 0) ? prefixSum[l1 - 1][r2] : 0;
-        int left = (r1 > 0) ? prefixSum[l2][r1 - 1] : 0;
-        int common = (l1 > 0 && r1 > 0) ? prefixSum[l1 - 1][r1 - 1] : 0;
-        return sum - up - left + common;
-    }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter number of rows and columns of matrix:");
-        int r = sc.nextInt();
-        int c = sc.nextInt();
-        if (r <= 0 || c <= 0) {
-            System.out.println("Invalid matrix size!");
-            return;
-        }
-        int[][] matrix = new int[r][c];
-        System.out.println("Enter " + (r * c) + " values:");
-        for (int i = 0; i < r; i++) {
-            for (int j = 0; j < c; j++) {
-                matrix[i][j] = sc.nextInt();
-            }
-        }
-        System.out.println("Enter the rectangle boundaries l1, r1, l2, r2:");
-        int l1 = sc.nextInt();
-        int r1 = sc.nextInt();
-        int l2 = sc.nextInt();
-        int r2 = sc.nextInt();
-        if (l1 < 0 || l2 >= r || r1 < 0 || r2 >= c || l1 > l2 || r1 > r2) {
-            System.out.println("Invalid boundaries!");
-            return;
-        }
-        int[][] prefixSum = computePrefixSum(matrix);
-        int rectangleSum = findSum(prefixSum, l1, r1, l2, r2);
-        System.out.println("Rectangle Sum: " + rectangleSum);
-    }
-}
+// import java.util.*;
+// public class TWODArray {
+//     static int[][] computePrefixSum(int[][] matrix) {
+//         int r = matrix.length;
+//         int c = matrix[0].length;
+//         int[][] prefixSum = new int[r][c];
+//         for (int i = 0; i < r; i++) {
+//             for (int j = 0; j < c; j++) {
+//                 prefixSum[i][j] = matrix[i][j];
+//                 if (i > 0) {
+//                     prefixSum[i][j] += prefixSum[i - 1][j];
+//                 }
+//                 if (j > 0) {
+//                     prefixSum[i][j] += prefixSum[i][j - 1];
+//                 }
+//                 if (i > 0 && j > 0) {
+//                     prefixSum[i][j] -= prefixSum[i - 1][j - 1];
+//                 }
+//             }
+//         }
+//         return prefixSum;
+//     }
+//     static int findSum(int[][] prefixSum, int l1, int r1, int l2, int r2) {
+//         int sum = prefixSum[l2][r2];
+//         int up = (l1 > 0) ? prefixSum[l1 - 1][r2] : 0;
+//         int left = (r1 > 0) ? prefixSum[l2][r1 - 1] : 0;
+//         int common = (l1 > 0 && r1 > 0) ? prefixSum[l1 - 1][r1 - 1] : 0;
+//         return sum - up - left + common;
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         System.out.println("Enter number of rows and columns of matrix:");
+//         int r = sc.nextInt();
+//         int c = sc.nextInt();
+//         if (r <= 0 || c <= 0) {
+//             System.out.println("Invalid matrix size!");
+//             return;
+//         }
+//         int[][] matrix = new int[r][c];
+//         System.out.println("Enter " + (r * c) + " values:");
+//         for (int i = 0; i < r; i++) {
+//             for (int j = 0; j < c; j++) {
+//                 matrix[i][j] = sc.nextInt();
+//             }
+//         }
+//         System.out.println("Enter the rectangle boundaries l1, r1, l2, r2:");
+//         int l1 = sc.nextInt();
+//         int r1 = sc.nextInt();
+//         int l2 = sc.nextInt();
+//         int r2 = sc.nextInt();
+//         if (l1 < 0 || l2 >= r || r1 < 0 || r2 >= c || l1 > l2 || r1 > r2) {
+//             System.out.println("Invalid boundaries!");
+//             return;
+//         }
+//         int[][] prefixSum = computePrefixSum(matrix);
+//         int rectangleSum = findSum(prefixSum, l1, r1, l2, r2);
+//         System.out.println("Rectangle Sum: " + rectangleSum);
+//     }
+// }
+
+
