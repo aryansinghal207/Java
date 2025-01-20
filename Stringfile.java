@@ -2,10 +2,13 @@
 import java.util.*;
 public class Stringfile{ 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String name; 
-        name = sc.next();
-        System.out.println(name);
-        sc.close(); 
+        // Scanner sc = new Scanner(System.in);
+        // String name; 
+        // name = sc.nextLine();
+        // System.out.println(name);
+        String firstname="Aryan";
+        String lastname="Singhal";
+        String fullname=firstname+" "+lastname;
+        System.out.println(fullname);
     }
 }
