@@ -52,21 +52,36 @@
 // }
 
 
-// Substring 
+// // Substring 
+// import java.util.*;
+// public class Stringfile{ 
+//     public static void getsubstring(String str,int a,int b){
+//         String result="";
+//         for(int i=a;i<b;i++){
+//             result+=str.charAt(i);
+//         }
+//         System.out.print("Substring according to index is : "+result);
+//     }
+//     public static void main(String[] args) {
+//         Scanner sc=new Scanner(System.in);
+//         int a=sc.nextInt();
+//         int b=sc.nextInt();
+//         String str="Aryan";
+//         getsubstring(str,a,b);
+//     }
+// }
+
+// WAP to print the largest String according to lexicographic order
 import java.util.*;
 public class Stringfile{ 
-    public static void getsubstring(String str,int a,int b){
-        String result="";
-        for(int i=a;i<b;i++){
-            result+=str.charAt(i);
-        }
-        System.out.print("Substring according to index is : "+result);
-    }
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int a=sc.nextInt();
-        int b=sc.nextInt();
-        String str="Aryan";
-        getsubstring(str,a,b);
+        String fruits[]={"apple","banana","mango"};
+        String largest=fruits[0];
+        for(int i=1;i<fruits.length;i++){
+            if(largest.compareTo(fruits[i])<0){
+                largest=fruits[i];
+            }
+        }
+        System.out.println(largest);
     }
 }
