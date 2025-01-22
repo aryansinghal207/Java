@@ -21,15 +21,30 @@
 
 import java.util.*;
 public class Stringfile{ 
-    public static void printletter(String str){
-        for(int i=0;i<str.length();i++){
-            System.out.print(str.charAt(i)+" ");
+    public static float getshortestpath(String path){
+        int x=0;
+        int y=0;
+        for(int i=0;i<path.length();i++){
+            char dir=path.charAt(i);
+            if(dir=='N'){
+                y++;
+            }
+            else if(dir=='S'){
+                y--;
+            }
+            else if(dir=='E'){
+                x++;
+            }
+            else{
+                x--;
+            }
         }
+        int x2=x*x;
+        int y2=y*y;
+        return (float)Math.sqrt(x2+y2);        
     }
     public static void main(String[] args) {
-        String firstname="Aryan";
-        String lastname="Singhal";
-        String fullname=firstname+" "+lastname;
-        printletter(fullname);
+        String path="WNEENESENNN";
+        System.out.println(getshortestpath(path));
     }
 }
