@@ -86,14 +86,14 @@
 //     }
 // }
 
-// WAP to append a to z char in string
-import java.util.*;
-public class Stringfile{ 
-    public static void main(String[] args) {
-        StringBuilder sb=new StringBuilder("");
-        for(char ch='a';ch<='z';ch++){
-            sb.append(ch);
-        }
-        System.out.println(sb);
-    }
-}
+// // WAP to append a to z char in string
+// import java.util.*;
+// public class Stringfile{ 
+//     public static void main(String[] args) {
+//         StringBuilder sb=new StringBuilder("");
+//         for(char ch='a';ch<='z';ch++){
+//             sb.append(ch);
+//         }
+//         System.out.println(sb);
+//     }
+// }
