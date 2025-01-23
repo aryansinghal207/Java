@@ -97,3 +97,28 @@
 //         System.out.println(sb);
 //     }
 // }
+
+
+// WAP to change first letter of every word to uppercase
+import java.util.*;
+public class Stringfile {
+    public static String uppercase(String stri) {
+        StringBuilder str = new StringBuilder();
+        char ch = Character.toUpperCase(stri.charAt(0));
+        str.append(ch);
+        for (int i = 1; i < stri.length(); i++) {
+            if (stri.charAt(i) == ' ' && i < stri.length() - 1) {
+                str.append(' '); 
+                i++; 
+                str.append(Character.toUpperCase(stri.charAt(i))); 
+            } else {
+                str.append(stri.charAt(i));
+            }
+        }
+        return str.toString();
+    }
+    public static void main(String[] args) {
+        String str = "aryan is a good boy";
+        System.out.println(uppercase(str));
+    }
+}
