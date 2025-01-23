@@ -99,26 +99,50 @@
 // }
 
 
-// WAP to change first letter of every word to uppercase
+// // WAP to change first letter of every word to uppercase
+// import java.util.*;
+// public class Stringfile {
+//     public static String uppercase(String stri) {
+//         StringBuilder str = new StringBuilder();
+//         char ch = Character.toUpperCase(stri.charAt(0));
+//         str.append(ch);
+//         for (int i = 1; i < stri.length(); i++) {
+//             if (stri.charAt(i) == ' ' && i < stri.length() - 1) {
+//                 str.append(' '); 
+//                 i++; 
+//                 str.append(Character.toUpperCase(stri.charAt(i))); 
+//             } else {
+//                 str.append(stri.charAt(i));
+//             }
+//         }
+//         return str.toString();
+//     }
+//     public static void main(String[] args) {
+//         String str = "aryan is a good boy";
+//         System.out.println(uppercase(str));
+//     }
+// }
+
+// WAP to Compress a String
 import java.util.*;
 public class Stringfile {
-    public static String uppercase(String stri) {
-        StringBuilder str = new StringBuilder();
-        char ch = Character.toUpperCase(stri.charAt(0));
-        str.append(ch);
-        for (int i = 1; i < stri.length(); i++) {
-            if (stri.charAt(i) == ' ' && i < stri.length() - 1) {
-                str.append(' '); 
-                i++; 
-                str.append(Character.toUpperCase(stri.charAt(i))); 
-            } else {
-                str.append(stri.charAt(i));
+    public static String compress(String str) {
+        String newstr="";
+        for(int i=0;i<str.length();i++){
+            Integer count=0;
+            while(i<str.length()-1 && str.charAt(i)==str.charAt(i+1)){
+                count++;
+                i++;
+            }
+            newstr+=str.charAt(i);
+            if(count>1){
+                newstr+=count.toString();
             }
         }
-        return str.toString();
+        return newstr;
     }
     public static void main(String[] args) {
-        String str = "aryan is a good boy";
-        System.out.println(uppercase(str));
+        String str = "aaabbbbccc";
+        System.out.println(compress(str));
     }
 }
