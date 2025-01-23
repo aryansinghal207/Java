@@ -123,26 +123,21 @@
 //     }
 // }
 
-// WAP to Compress a String
+// WAP to Count lowercase in a String
 import java.util.*;
 public class Stringfile {
-    public static String compress(String str) {
-        String newstr="";
+    public static int countlower(String str){
+        int count=0;
         for(int i=0;i<str.length();i++){
-            Integer count=0;
-            while(i<str.length()-1 && str.charAt(i)==str.charAt(i+1)){
+            char ch = str.charAt(i);
+            if(ch>='a' && ch<='z'){
                 count++;
-                i++;
-            }
-            newstr+=str.charAt(i);
-            if(count>1){
-                newstr+=count.toString();
             }
         }
-        return newstr;
+        return count;
     }
     public static void main(String[] args) {
-        String str = "aaabbbbccc";
-        System.out.println(compress(str));
+        String str = "AbcdE";
+        System.out.println(countlower(str));
     }
 }
