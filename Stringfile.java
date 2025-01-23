@@ -123,7 +123,7 @@
 //     }
 // }
 
-// WAP to Count lowercase in a String
+// // WAP to Count lowercase in a String
 import java.util.*;
 public class Stringfile {
     public static int countlower(String str){
