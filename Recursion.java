@@ -238,18 +238,72 @@
 // }
 
 
-// WAP to find sum of all element of an array
+// // WAP to find sum of all element of an array
+// import java.util.*;
+// public class Recursion {
+//     public static int sum(int[] x, int y) {
+//         if (y == x.length) {
+//             return 0;
+//         }
+//         return x[y] + sum(x, y + 1);
+//     }
+//     public static void main(String[] args) {
+//         int[] arr = {1, 2, 3, 4, 5};
+//         int result=sum(arr, 0);
+//         System.out.print(result);
+//     }
+// }
+
+
+// import java.util.*;
+// class OOPS {
+//     public static void steps(int a, int b) {
+//       if (a == b) {
+//         System.out.println("Reached Mess");
+//       } else {
+//         System.out.println(a);
+//         steps(a + 1, b); 
+//         return; 
+//       }
+//     }
+//     public static void main(String[] args) {
+//       Scanner sc = new Scanner(System.in);
+//       int a = sc.nextInt();
+//       int b = sc.nextInt();
+//       steps(a, b);
+//     }
+//   }
+
+
+// import java.util.*;
+// class Recursion{
+//     public static int sum(int a) {
+//       if (a==1) {
+//         return 1;
+//       } 
+//     return a+sum(a-1); 
+//     }
+//     public static void main(String[] args) {
+//       Scanner sc = new Scanner(System.in);
+//       int a = sc.nextInt();
+//       int ans=sum(a);
+//       System.out.println(ans);
+//     }
+// }
+
+
 import java.util.*;
-public class Recursion {
-    public static int sum(int[] x, int y) {
-        if (y == x.length) {
-            return 0;
-        }
-        return x[y] + sum(x, y + 1);
+class Recursion{
+    public static int factorail(int n) {
+      if(n==0 || n==1) {
+        return 1;
+      } 
+    return factorail(n-1)+factorail(n-2); 
     }
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5};
-        int result=sum(arr, 0);
-        System.out.print(result);
+      Scanner sc = new Scanner(System.in);
+      int a = sc.nextInt();
+      int ans=factorail(a);
+      System.out.println(ans);
     }
 }
