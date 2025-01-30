@@ -32,30 +32,58 @@
 //     }
 // }
 
+
+// public class OOPS{
+//     public static void main(String args[]){
+//         Horse h=new Horse();
+//         h.eat();
+//         h.walk();
+
+//         Chicken c=new Chicken();
+//         c.eat();
+//         c.walk();
+//     }
+// }
+// abstract class Animal{
+//     void eat(){
+//         System.out.println("Animal Eats");
+//     }
+//     abstract void walk();
+// }
+// class Horse extends Animal{
+//     void walk(){
+//         System.out.println("Walks on 4 legs"); 
+//     }
+// }
+// class Chicken extends Animal{
+//     void walk(){
+//         System.out.println("Walks on 2 legs");
+//     }
+// }
+
+
+// Interfaces
 public class OOPS{
     public static void main(String args[]){
-        Horse h=new Horse();
-        h.eat();
-        h.walk();
-
-        Chicken c=new Chicken();
-        c.eat();
-        c.walk();
+        Queen q=new Queen();
+        q.moves();
     }
 }
-abstract class Animal{
-    void eat(){
-        System.out.println("Animal Eats");
-    }
-    abstract void walk();
+interface ChessPlayer{
+    void moves();
 }
-class Horse extends Animal{
-    void walk(){
-        System.out.println("Walks on 4 legs"); 
+class Queen implements ChessPlayer{
+    public void moves(){
+        System.out.println("up,down,left,right,diagonal (in all 4 directions)");
     }
 }
-class Chicken extends Animal{
-    void walk(){
-        System.out.println("Walks on 2 legs");
+class Rook implements ChessPlayer{
+    public void moves(){
+        System.out.println("up,down,left,right");
+    }
+}
+class King implements ChessPlayer{
+    public void moves(){
+        System.out.println("up,down,left,right,diagonal (by 1 step)");
     }
 }
