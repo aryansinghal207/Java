@@ -298,7 +298,7 @@ class Recursion{
       if(n==0 || n==1) {
         return 1;
       } 
-    return factorail(n-1)+factorail(n-2); 
+    return n*factorail(n-1); 
     }
     public static void main(String[] args) {
       Scanner sc = new Scanner(System.in);
