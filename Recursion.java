@@ -292,6 +292,7 @@
 // }
 
 
+// Practice 
 import java.util.*;
 class Recursion{
     public static int factorail(int n) {
