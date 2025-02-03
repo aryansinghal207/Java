@@ -28,8 +28,8 @@ public class Insertionsort{
             arr[i] = sc.nextInt();
         }
         sort(arr,size);
-        for (int i : arr) {
-            System.out.print(i+" ");
-        }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }        
     }
 }
