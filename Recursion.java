@@ -292,25 +292,20 @@
 // }
 
 
-// Practice 
 import java.util.*;
-class Recursion{
-    public static int factorail(int n) {
-      if(n==0 || n==1) {
-        return 1;
-      } 
-    return n*factorail(n-1); 
-    }
-    public static int sum(int n){
-      if(n==1){
-        return 1;
-      }
-      return n+sum(n-1);
+public class Recursion{
+    public static int lastOccurrence(int arr[], int key, int i) {
+        if (i == arr.length) {
+            return -1;
+        }
+        int isFound = lastOccurrence(arr, key, i + 1);
+        if (isFound == -1 && arr[i] == key) {
+            return i;
+        }
+        return isFound;
     }
     public static void main(String[] args) {
-      Scanner sc = new Scanner(System.in);
-      int a = sc.nextInt();
-      int ans=sum(a);
-      System.out.println(ans);
+        int arr[] = {8, 1, 2, 5, 3, 8};
+        System.out.println(lastOccurrence(arr, 8, 0));
     }
 }
