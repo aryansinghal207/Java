@@ -312,20 +312,38 @@
 // }
 
 
-// WAP to print the nth power if any number
+// // WAP to print the nth power if any number
+// import java.util.*;
+// public class Recursion{
+//     public static int optimzedpower(int a,int n){
+//         if (n==0){
+//             return 1;
+//         }
+//         int halfpowersq=optimzedpower(a,n/2)*optimzedpower(a,n/2);
+//         if(n%2!=0){
+//             halfpowersq=a*halfpowersq;
+//         }
+//         return halfpowersq;
+//     }
+//     public static void main(String[] args){
+//         System.out.println(optimzedpower(2,10));
+//     }
+// }
+
+
+// WAP to Tiling Problem Code
 import java.util.*;
 public class Recursion{
-    public static int optimzedpower(int a,int n){
-        if (n==0){
+    public static int tiling(int n){
+        if (n==0 || n==1){
             return 1;
         }
-        int halfpowersq=optimzedpower(a,n/2)*optimzedpower(a,n/2);
-        if(n%2!=0){
-            halfpowersq=a*halfpowersq;
-        }
-        return halfpowersq;
+        int fnm1=tiling(n-1);
+        int fnm2=tiling(n-2);
+        int totalways=fnm1+fnm2;
+        return totalways;
     }
     public static void main(String[] args){
-        System.out.println(optimzedpower(2,10));
+        System.out.println(tiling(5));
     }
 }
