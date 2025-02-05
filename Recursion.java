@@ -292,20 +292,40 @@
 // }
 
 
+// // WAP to Print the last occurence of any number 
+// import java.util.*;
+// public class Recursion{
+//     public static int lastOccurrence(int arr[], int key, int i) {
+//         if (i == arr.length) {
+//             return -1;
+//         }
+//         int isFound = lastOccurrence(arr, key, i + 1);
+//         if (isFound == -1 && arr[i] == key) {
+//             return i;
+//         }
+//         return isFound;
+//     }
+//     public static void main(String[] args) {
+//         int arr[] = {8, 1, 2, 5, 3, 8};
+//         System.out.println(lastOccurrence(arr, 8, 0));
+//     }
+// }
+
+
+// WAP to print the nth power if any number
 import java.util.*;
 public class Recursion{
-    public static int lastOccurrence(int arr[], int key, int i) {
-        if (i == arr.length) {
-            return -1;
+    public static int optimzedpower(int a,int n){
+        if (n==0){
+            return 1;
         }
-        int isFound = lastOccurrence(arr, key, i + 1);
-        if (isFound == -1 && arr[i] == key) {
-            return i;
+        int halfpowersq=optimzedpower(a,n/2)*optimzedpower(a,n/2);
+        if(n%2!=0){
+            halfpowersq=a*halfpowersq;
         }
-        return isFound;
+        return halfpowersq;
     }
-    public static void main(String[] args) {
-        int arr[] = {8, 1, 2, 5, 3, 8};
-        System.out.println(lastOccurrence(arr, 8, 0));
+    public static void main(String[] args){
+        System.out.println(optimzedpower(2,10));
     }
 }
