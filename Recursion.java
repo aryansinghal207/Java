@@ -331,19 +331,43 @@
 // }
 
 
-// WAP to Tiling Problem Code
+// // WAP to Tiling Problem Code
+// import java.util.*;
+// public class Recursion{
+//     public static int tiling(int n){
+//         if (n==0 || n==1){
+//             return 1;
+//         }
+//         int fnm1=tiling(n-1);
+//         int fnm2=tiling(n-2);
+//         int totalways=fnm1+fnm2;
+//         return totalways;
+//     }
+//     public static void main(String[] args){
+//         System.out.println(tiling(5));
+//     }
+// }
+
+
+// WAP to Remove Duplicates in a string
 import java.util.*;
-public class Recursion{
-    public static int tiling(int n){
-        if (n==0 || n==1){
-            return 1;
+public class Recursion {
+    public static void removeDuplicate(String str, int idx, StringBuilder newStr, boolean[] map) {
+        if (idx == str.length()) {
+            System.out.println(newStr);
+            return;
         }
-        int fnm1=tiling(n-1);
-        int fnm2=tiling(n-2);
-        int totalways=fnm1+fnm2;
-        return totalways;
+        char currChar = str.charAt(idx);
+        if (map[currChar - 'a']) {
+            removeDuplicate(str, idx + 1, newStr, map);
+        } else {
+            map[currChar - 'a'] = true;
+            removeDuplicate(str, idx + 1, new StringBuilder(newStr).append(currChar), map);
+        }
     }
-    public static void main(String[] args){
-        System.out.println(tiling(5));
+    public static void main(String[] args) {
+        String str = "appnaacolllege";
+        boolean[] map = new boolean[26];
+        removeDuplicate(str, 0, new StringBuilder(), map);
     }
 }
