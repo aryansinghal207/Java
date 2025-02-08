@@ -388,19 +388,35 @@
 // }
 
 
+// import java.util.*;
+// public class Recursion {
+//     public static void printbin(int n,int last,String str){
+//         if(n==0){
+//             System.out.println(str);
+//             return;
+//         }
+//         printbin(n-1,0,str+"0");
+//         if(last==0){
+//             printbin(n-1,1,str+"1");
+//         }
+//     }
+//     public static void main(String[] args){
+//         printbin(3,0,"");
+//     }
+// }
 import java.util.*;
 public class Recursion {
-    public static void printbin(int n,int last,StringBuilder str){
+    public static void printbin(int n,int last,String str){
         if(n==0){
             System.out.println(str);
             return;
         }
-        printbin(n-1,0,str.append("0"));
-        if(last==0){
-            printbin(n-1,1,str.append("1"));
+        printbin(n-1,1,str+"1");
+        if(last==1){
+            printbin(n-1,0,str+"0");
         }
     }
     public static void main(String[] args){
-        printbin(1,0,new StringBuilder(""));
+        printbin(3,0,"");
     }
 }
