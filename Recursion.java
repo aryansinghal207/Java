@@ -373,16 +373,34 @@
 // }
 
 
-// Friends pairing
+// // Friends pairing
+// import java.util.*;
+// public class Recursion {
+//     public static int friendspair(int n){
+//         if(n==1 || n==2){
+//             return n;
+//         }
+//         return friendspair(n-1)+(n-1)*friendspair(n-2);
+//     }
+//     public static void main(String[] args){
+//         System.out.println(friendspair(3));
+//     }
+// }
+
+
 import java.util.*;
 public class Recursion {
-    public static int friendspair(int n){
-        if(n==1 || n==2){
-            return n;
+    public static void printbin(int n,int last,StringBuilder str){
+        if(n==0){
+            System.out.println(str);
+            return;
         }
-        return friendspair(n-1)+(n-1)*friendspair(n-2);
+        printbin(n-1,0,str.append("0"));
+        if(last==0){
+            printbin(n-1,1,str.append("1"));
+        }
     }
     public static void main(String[] args){
-        System.out.println(friendspair(3));
+        printbin(1,0,new StringBuilder(""));
     }
 }
