@@ -404,19 +404,19 @@
 //         printbin(3,0,"");
 //     }
 // }
-import java.util.*;
-public class Recursion {
-    public static void printbin(int n,int last,String str){
-        if(n==0){
-            System.out.println(str);
-            return;
-        }
-        printbin(n-1,1,str+"1");
-        if(last==1){
-            printbin(n-1,0,str+"0");
-        }
-    }
-    public static void main(String[] args){
-        printbin(3,1,"");
-    }
-}
+// import java.util.*;
+// public class Recursion {
+//     public static void printbin(int n,int last,String str){
+//         if(n==0){
+//             System.out.println(str);
+//             return;
+//         }
+//         printbin(n-1,1,str+"1");
+//         if(last==1){
+//             printbin(n-1,0,str+"0");
+//         }
+//     }
+//     public static void main(String[] args){
+//         printbin(3,1,"");
+//     }
+// }
