@@ -417,6 +417,6 @@ public class Recursion {
         }
     }
     public static void main(String[] args){
-        printbin(3,0,"");
+        printbin(3,1,"");
     }
 }
