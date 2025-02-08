@@ -349,25 +349,40 @@
 // }
 
 
-// WAP to Remove Duplicates in a string
+// // WAP to Remove Duplicates in a string
+// import java.util.*;
+// public class Recursion {
+//     public static void removeDuplicate(String str, int idx, StringBuilder newStr, boolean[] map) {
+//         if (idx == str.length()) {
+//             System.out.println(newStr);
+//             return;
+//         }
+//         char currChar = str.charAt(idx);
+//         if (map[currChar - 'a']) {
+//             removeDuplicate(str, idx + 1, newStr, map);
+//         } else {
+//             map[currChar - 'a'] = true;
+//             removeDuplicate(str, idx + 1, new StringBuilder(newStr).append(currChar), map);
+//         }
+//     }
+//     public static void main(String[] args) {
+//         String str = "appnaacolllege";
+//         boolean[] map = new boolean[26];
+//         removeDuplicate(str, 0, new StringBuilder(), map);
+//     }
+// }
+
+
+// Friends pairing
 import java.util.*;
 public class Recursion {
-    public static void removeDuplicate(String str, int idx, StringBuilder newStr, boolean[] map) {
-        if (idx == str.length()) {
-            System.out.println(newStr);
-            return;
+    public static int friendspair(int n){
+        if(n==1 || n==2){
+            return n;
         }
-        char currChar = str.charAt(idx);
-        if (map[currChar - 'a']) {
-            removeDuplicate(str, idx + 1, newStr, map);
-        } else {
-            map[currChar - 'a'] = true;
-            removeDuplicate(str, idx + 1, new StringBuilder(newStr).append(currChar), map);
-        }
+        return friendspair(n-1)+(n-1)*friendspair(n-2);
     }
-    public static void main(String[] args) {
-        String str = "appnaacolllege";
-        boolean[] map = new boolean[26];
-        removeDuplicate(str, 0, new StringBuilder(), map);
+    public static void main(String[] args){
+        System.out.println(friendspair(3));
     }
 }
