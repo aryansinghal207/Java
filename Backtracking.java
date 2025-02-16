@@ -23,23 +23,44 @@
 // }
 
 
+// // WAP to find subset of a string
+// import java.util.*;
+// public class Backtracking{
+//     public static void findsubs(String str,String ans,int i){
+//         if(i==str.length()){
+//             if(ans.length()==0){
+//                 System.out.println("null");
+//             }else{
+//                 System.out.println(ans);
+//             }
+//             return;
+//         }
+//         findsubs(str,ans+str.charAt(i),i+1);
+//         findsubs(str,ans,i+1);
+//     }
+//     public static void main(String[] args){
+//         String str="abc";
+//         findsubs(str,"",0);
+//     }
+// }
+
+
 // WAP to find subset of a string
 import java.util.*;
 public class Backtracking{
-    public static void findsubs(String str,String ans,int i){
-        if(i==str.length()){
-            if(ans.length()==0){
-                System.out.println("null");
-            }else{
-                System.out.println(ans);
-            }
+    public static void permutation(String str,String ans){
+        if(str.length()==0){
+            System.out.println(ans);
             return;
         }
-        findsubs(str,ans+str.charAt(i),i+1);
-        findsubs(str,ans,i+1);
+        for(int i=0;i<str.length();i++){
+            char curr=str.charAt(i);
+            String newstr=str.substring(0,i)+str.substring(i+1);
+            permutation(newstr,ans+curr);
+        }
     }
     public static void main(String[] args){
         String str="abc";
-        findsubs(str,"",0);
+        permutation(str,"");
     }
 }
