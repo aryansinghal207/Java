@@ -7,16 +7,17 @@
 // It is Stable also.
 // Yeah cards ki tarah hota ha like hmm aapne cards ko sorted order m set karke rakhna cahte ha in the same way hm ek index se check karenge ke usse pechle wala element usee chota to nhi ha or aagar ha to swap karte rehte ha.
 
+// Insertion Sort
 import java.util.Scanner;
 public class Insertionsort{
     static void sort(int[] a,int n) {
         for(int i=1;i<n;i++){
-            int j=i;
-            while(j>0 && a[j]<a[j-1]){
-                int temp=a[j];
-                a[j]=a[j-1];
-                a[j-1]=temp;
-                j--;
+            for(int j=i;j>0;j--){
+                if(a[j]<a[j-1]){
+                    int temp=a[j];
+                    a[j]=a[j-1];
+                    a[j-1]=temp;
+                }
             }
         }
     }

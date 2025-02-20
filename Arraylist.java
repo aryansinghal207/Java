@@ -68,18 +68,51 @@
 // }
 
 
-// WAP to reverse a Arraylist
+// // WAP to reverse a Arraylist
+// import java.util.ArrayList;
+// import java.util.Collections;
+// public class Arraylist{
+//     public static void main(String[] args){
+//         ArrayList<String> l1=new ArrayList<>();
+//         l1.add("Welcome");
+//         l1.add("To");
+//         l1.add("Physics");
+//         l1.add("Wallah");
+//         System.out.println("Original Order : "+l1);
+//         Collections.sort(l1);
+//         System.out.println("Reversed Order : "+l1);
+//     }
+// }
+
+
 import java.util.ArrayList;
 import java.util.Collections;
 public class Arraylist{
     public static void main(String[] args){
-        ArrayList<String> l1=new ArrayList<>();
-        l1.add("Welcome");
-        l1.add("To");
-        l1.add("Physics");
-        l1.add("Wallah");
-        System.out.println("Original Order : "+l1);
-        Collections.sort(l1);
-        System.out.println("Reversed Order : "+l1);
+        ArrayList<Integer> list=new ArrayList<>();   // Initialize the Arraylist
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+        list.add(2,3);
+        list.remove(2);   // Remove through index
+        list.set(2,10);   // Remove previous element and add the new element at that index
+        System.out.println(list);
+        System.out.println(list.contains(1));
+        System.out.println(list.contains(11));
+        for(int i=0;i<list.size();i++){
+            System.out.print(list.get(i)+" ");
+        }
+        System.out.println();
+        for(int i=list.size()-1;i>=0;i--){
+            System.out.print(list.get(i)+" ");
+        }
+        System.out.println();
+        Collections.sort(list);
+        System.out.println(list);
+        Collections.sort(list,Collections.reverseOrder());
+        System.out.println(list);
     }
 }
