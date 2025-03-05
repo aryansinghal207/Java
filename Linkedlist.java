@@ -1,4 +1,45 @@
 // import java.util.*;
+// public class Linkedlist {
+//     Node head;
+//     static class Node {
+//         int data;
+//         Node next;
+//         Node(int data){
+//             this.data = data;
+//             this.next = null;
+//         }
+//     }
+//     public void insert(int data) {
+//         Node newNode = new Node(data);
+//         if (head == null) {
+//             head = newNode;
+//             return;
+//         }
+//         Node temp = head;
+//         while (temp.next != null) {
+//             temp = temp.next;
+//         }
+//         temp.next = newNode;
+//     }
+//     public void display() {
+//         Node temp = head;
+//         while (temp != null) {
+//             System.out.print(temp.data + " -> ");
+//             temp = temp.next;
+//         }
+//         System.out.println("null");
+//     }
+//     public static void main(String[] args) {
+//         Linkedlist list = new Linkedlist();
+//         list.insert(10);
+//         list.insert(20);
+//         list.insert(30);
+//         list.display();
+//     }
+// }
+
+
+// import java.util.*;
 // public class Linkedlist{
 //     public static class Node{
 //         int data;
@@ -111,58 +152,59 @@
 // }
 
 
-import java.util.*;
-public class Linkedlist{
-    public static class Node{
-        int data;
-        Node next;
-        public Node(int data){
-            this.data=data;
-            this.next=null;
-        }
-    }
-    public static Node head;
-    public static Node tail;
-    public static int size;
-    public void addfirst(int data){
-        Node newNode=new Node(data);
-        size++;
-        if(head==null){
-            head=tail=newNode;
-            return;
-        }
-        newNode.next=head;
-        head=newNode;
-    }
-    public void addlast(int data){
-        Node newNode=new Node(data);
-        size++;
-        if(head==null){
-            head=tail=newNode;
-            return;
-        }
-        tail.next=newNode;
-        tail=newNode;
-    }
-    public int itrsearch(int key){
-        Node temp=head;
-        int i=0;
-        while(temp!=null){
-            if(temp.data==key){
-                return i;
-            }
-            temp=temp.next;
-            i++;
-        }
-        return -1;
-    }
-    public static void main(String args[]){
-        Linkedlist l1=new Linkedlist();
-        l1.addfirst(2);
-        l1.addfirst(1);
-        l1.addlast(3);
-        l1.addlast(4);
-        System.out.println(l1.itrsearch(3));
-        System.out.println(l1.itrsearch(10));
-    }
-}
+// import java.util.*;
+// public class Linkedlist{
+//     public static class Node{
+//         int data;
+//         Node next;
+//         public Node(int data){
+//             this.data=data;
+//             this.next=null;
+//         }
+//     }
+//     public static Node head;
+//     public static Node tail;
+//     public static int size;
+//     public void addfirst(int data){
+//         Node newNode=new Node(data);
+//         size++;
+//         if(head==null){
+//             head=tail=newNode;
+//             return;
+//         }
+//         newNode.next=head;
+//         head=newNode;
+//     }
+//     public void addlast(int data){
+//         Node newNode=new Node(data);
+//         size++;
+//         if(head==null){
+//             head=tail=newNode;
+//             return;
+//         }
+//         tail.next=newNode;
+//         tail=newNode;
+//     }
+//     public int itrsearch(int key){
+//         Node temp=head;
+//         int i=0;
+//         while(temp!=null){
+//             if(temp.data==key){
+//                 return i;
+//             }
+//             temp=temp.next;
+//             i++;
+//         }
+//         return -1;
+//     }
+//     public static void main(String args[]){
+//         Linkedlist l1=new Linkedlist();
+//         l1.addfirst(2);
+//         l1.addfirst(1);
+//         l1.addlast(3);
+//         l1.addlast(4);
+//         System.out.println(l1.itrsearch(3));
+//         System.out.println(l1.itrsearch(10));
+//     }
+// }
+
