@@ -44,6 +44,59 @@
 //     public static class Node{
 //         int data;
 //         Node next;
+//         Node(int data){
+//             this.data=data;
+//             this.next=null;
+//         }
+//     }
+//     public static Node head;
+//     public static Node tail;
+//     public void addfirst(int data){
+//         Node newNode=new Node(data);
+//         if(head==null){
+//             head=tail=newNode;
+//             return;
+//         }
+//         newNode.next=head;
+//         head=newNode;
+//     }
+//     public void addlast(int data){
+//         Node newNode=new Node(data);
+//         if(head==null){
+//             head=tail=newNode;
+//             return;
+//         }
+//         tail.next=newNode;
+//         tail=newNode;
+//     }
+//     public void print(){
+//         if(head==null){
+//             System.out.println("LinkedList is empty");
+//             return;
+//         }
+//         Node temp=head;
+//         while(temp != null){
+//             System.out.println(temp.data+" ");
+//             temp=temp.next;
+//         }
+//         System.out.println();
+//     }
+//     public static void main(String[] args){
+//         Linkedlist l1=new Linkedlist();
+//         l1.addfirst(2);
+//         l1.addfirst(1);
+//         l1.addlast(3);
+//         l1.addlast(4);
+//         l1.print();
+//     }
+// }
+
+
+// import java.util.*;
+// public class Linkedlist{
+//     public static class Node{
+//         int data;
+//         Node next;
 //         public Node(int data){
 //             this.data=data;
 //             this.next=null;
@@ -207,4 +260,5 @@
 //         System.out.println(l1.itrsearch(10));
 //     }
 // }
+
 
