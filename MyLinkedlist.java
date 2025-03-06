@@ -40,6 +40,68 @@
 
 
 // import java.util.*;
+// public class MyLinkedlist {
+//     public static class Node {
+//         int data;
+//         Node next;
+//         public Node(int data) {
+//             this.data = data;
+//             this.next = null;
+//         }
+//     }
+//     public static Node head;
+//     public static Node tail;
+//     public void addFirst(int data) { 
+//         Node newnode = new Node(data);
+//         if (head == null) {
+//             head = tail = newnode;
+//             return;
+//         }
+//         newnode.next = head;
+//         head = newnode;
+//     }
+//     public void add(int idx, int data) {
+//         if (idx == 0) {
+//             addFirst(data);
+//             return;
+//         }
+//         Node newnode = new Node(data);
+//         Node temp = head;
+//         int i = 0;
+//         while (i < idx - 1 && temp != null) {
+//             temp = temp.next;
+//             i++;
+//         }
+//         if (temp == null) {
+//             System.out.println("Index out of bounds");
+//             return;
+//         }
+//         newnode.next = temp.next;
+//         temp.next = newnode;
+//     }
+//     public void print() { 
+//         if (head == null) {
+//             System.out.println("Linked List is Empty");
+//             return;
+//         }
+//         Node temp = head;
+//         while (temp != null) {
+//             System.out.print(temp.data + " ");
+//             temp = temp.next;
+//         }
+//         System.out.println();
+//     }
+//     public static void main(String[] args) {
+//         MyLinkedlist l1 = new MyLinkedlist();
+//         l1.addFirst(2); 
+//         l1.addFirst(1);
+//         l1.add(2, 9);
+//         l1.print(); 
+//     }
+// }
+
+
+// import java.util.*;
 // public class MyLinkedlist{
 //     public static class Node{
 //         int data;
@@ -283,24 +345,20 @@ public class MyLinkedlist {
         newnode.next = head;
         head = newnode;
     }
-    public void add(int idx, int data) {
-        if (idx == 0) {
-            addFirst(data);
+    public void last_delete(){
+        if(head==null){
+            System.out.println("LL is empty");
+            return;
+        }  
+        if(head.next==null){
+            head=null;
             return;
         }
-        Node newnode = new Node(data);
-        Node temp = head;
-        int i = 0;
-        while (i < idx - 1 && temp != null) {
-            temp = temp.next;
-            i++;
+        Node cur=head;
+        while(cur.next.next != null){
+            cur=cur.next;
         }
-        if (temp == null) {
-            System.out.println("Index out of bounds");
-            return;
-        }
-        newnode.next = temp.next;
-        temp.next = newnode;
+        cur.next=null;
     }
     public void print() { 
         if (head == null) {
@@ -318,7 +376,8 @@ public class MyLinkedlist {
         MyLinkedlist l1 = new MyLinkedlist();
         l1.addFirst(2); 
         l1.addFirst(1);
-        l1.add(2, 9);
+        l1.print(); 
+        l1.last_delete();
         l1.print(); 
     }
 }
