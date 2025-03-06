@@ -1,5 +1,5 @@
 // import java.util.*;
-// public class Linkedlist {
+// public class MyLinkedlist {
 //     Node head;
 //     static class Node {
 //         int data;
@@ -40,7 +40,7 @@
 
 
 // import java.util.*;
-// public class Linkedlist{
+// public class MyLinkedlist{
 //     public static class Node{
 //         int data;
 //         Node next;
@@ -93,7 +93,7 @@
 
 
 // import java.util.*;
-// public class Linkedlist{
+// public class MyLinkedlist{
 //     public static class Node{
 //         int data;
 //         Node next;
@@ -206,7 +206,7 @@
 
 
 // import java.util.*;
-// public class Linkedlist{
+// public class MyLinkedlist{
 //     public static class Node{
 //         int data;
 //         Node next;
@@ -262,3 +262,58 @@
 // }
 
 
+import java.util.*;
+public class MyLinkedList{
+    public static class Node{
+        int data;
+        Node next;
+        public Node(int data){
+            this.data=data;
+            this.next=null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public void addfirst(int data){
+        Node newnode=new Node(data);
+        if(head==null){
+            head=tail=newnode;
+            return;
+        }
+        newnode.next=head;
+        head=newnode;
+    }
+    public void add(int idx,int data){
+        if(idx==0){
+            addfirst(data);
+            return;
+        }
+        Node newnode=new Node(data);
+        Node temp=head;
+        int i=0;
+        while(i<idx-1){
+            temp=temp.next;
+            i++;
+        }
+        newnode.next=temp.next;
+        temp.next=newnode;
+    }
+    public void print(){
+        if(head==null){
+            System.out.println("Linked List is Empty");
+        }
+        Node temp=head;
+        while(temp != null){
+            System.out.println(temp.data+" ");
+            temp=temp.next;
+        }
+        System.out.println();
+    }
+    public static void main(String[] args){
+        LinkedList l1=new LinkedList();
+        l1.addfirst(2);
+        l1.addfirst(1);
+        l1.add(2,9);
+        l1.print();
+    }
+}
