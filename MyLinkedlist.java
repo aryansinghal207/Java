@@ -1,5 +1,5 @@
 // import java.util.*;
-// public class MyMyLinkedList{
+// public class MyMyLinkedlist{
 //     Node head;
 //     static class Node {
 //         int data;
@@ -30,7 +30,7 @@
 //         System.out.println("null");
 //     }
 //     public static void main(String[] args) {
-//         MyLinkedListlist = new MyLinkedList;
+//         MyLinkedlistlist = new MyLinkedlist;
 //         list.insert(10);
 //         list.insert(20);
 //         list.insert(30);
@@ -71,7 +71,7 @@
 //     }
 //     public void print(){
 //         if(head==null){
-//             System.out.println("MyLinkedListis empty");
+//             System.out.println("MyLinkedlistis empty");
 //             return;
 //         }
 //         Node temp=head;
@@ -82,7 +82,7 @@
 //         System.out.println();
 //     }
 //     public static void main(String[] args){
-//         MyLinkedListl1=new MyLinkedList;
+//         MyLinkedlistl1=new MyLinkedlist;
 //         l1.addFirst(2);
 //         l1.addFirst(1);
 //         l1.addlast(3);
@@ -154,7 +154,7 @@
 //     }
 //     public int removefirst(){
 //         if(size==0){
-//             System.out.print("MyLinkedListis empty");
+//             System.out.print("MyLinkedlistis empty");
 //             return Integer.MIN_VALUE;
 //         }else if(size==1){
 //             int val=head.data;
@@ -168,7 +168,7 @@
 //     }
 //     public int removelast(){
 //         if(size==0){
-//             System.out.print("MyLinkedListis empty");
+//             System.out.print("MyLinkedlistis empty");
 //             return Integer.MIN_VALUE;
 //         }else if(size==1){
 //             int val=head.data;
@@ -187,7 +187,7 @@
 //         return val;
 //     }
 //     public static void main(String args[]){
-//         MyLinkedListl1=new MyLinkedList;
+//         MyLinkedlistl1=new MyLinkedlist;
 //         l1.addFirst(2);
 //         l1.addFirst(1);
 //         l1.addlast(3);
@@ -251,7 +251,7 @@
 //         return -1;
 //     }
 //     public static void main(String args[]){
-//         MyLinkedListl1=new MyLinkedList;
+//         MyLinkedlistl1=new MyLinkedlist;
 //         l1.addFirst(2);
 //         l1.addFirst(1);
 //         l1.addlast(3);
@@ -263,7 +263,7 @@
 
 
 import java.util.*;
-public class MyLinkedList {
+public class MyLinkedlist {
     public static class Node {
         int data;
         Node next;
@@ -315,7 +315,7 @@ public class MyLinkedList {
         System.out.println();
     }
     public static void main(String[] args) {
-        MyLinkedList l1 = new MyLinkedList();
+        MyLinkedlist l1 = new MyLinkedlist();
         l1.addFirst(2); 
         l1.addFirst(1);
         l1.add(2, 9);
