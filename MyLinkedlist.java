@@ -372,12 +372,47 @@ public class MyLinkedlist {
         }
         System.out.println();
     }
+    public int itrsearch(int key){
+        Node temp=head;
+        int i=0;
+        while(temp != null){
+            if(temp.data==key){
+                return i;
+            }
+            temp=temp.next;
+            i++;
+        }
+        return -1;
+    }
+    public int helper(Node head,int key){
+        if(head==null){
+            return -1;
+        }
+        if(head.data==key){
+            return 0;
+        }
+        int idx=helper(head.next,key);
+        if(idx == -1){
+            return -1;
+        }
+        return idx+1;
+    }
+    public int recsearch(int key){
+        return helper(head,key);
+    }
     public static void main(String[] args) {
         MyLinkedlist l1 = new MyLinkedlist();
         l1.addFirst(2); 
         l1.addFirst(1);
+        l1.addFirst(5);
+        l1.addFirst(3);
+        l1.addFirst(4);
         l1.print(); 
-        l1.last_delete();
-        l1.print(); 
+        // l1.last_delete();
+        // l1.print(); 
+        System.out.println(l1.itrsearch(2));
+        System.out.println(l1.itrsearch(7));
+        System.out.println(l1.recsearch(3));
+        System.out.println(l1.recsearch(7));
     }
 }
