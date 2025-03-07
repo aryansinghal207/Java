@@ -324,95 +324,159 @@
 // }
 
 
+// import java.util.*;
+// public class MyLinkedlist {
+//     public static class Node {
+//         int data;
+//         Node next;
+//         public Node(int data) {
+//             this.data = data;
+//             this.next = null;
+//         }
+//     }
+//     public static Node head;
+//     public static Node tail;
+//     public void addFirst(int data) { 
+//         Node newnode = new Node(data);
+//         if (head == null) {
+//             head = tail = newnode;
+//             return;
+//         }
+//         newnode.next = head;
+//         head = newnode;
+//     }
+//     public void last_delete(){
+//         if(head==null){
+//             System.out.println("LL is empty");
+//             return;
+//         }  
+//         if(head.next==null){
+//             head=null;
+//             return;
+//         }
+//         Node cur=head;
+//         while(cur.next.next != null){
+//             cur=cur.next;
+//         }
+//         cur.next=null;
+//     }
+//     public void print() { 
+//         if (head == null) {
+//             System.out.println("Linked List is Empty");
+//             return;
+//         }
+//         Node temp = head;
+//         while (temp != null) {
+//             System.out.print(temp.data + " ");
+//             temp = temp.next;
+//         }
+//         System.out.println();
+//     }
+//     public int itrsearch(int key){
+//         Node temp=head;
+//         int i=0;
+//         while(temp != null){
+//             if(temp.data==key){
+//                 return i;
+//             }
+//             temp=temp.next;
+//             i++;
+//         }
+//         return -1;
+//     }
+//     public int helper(Node head,int key){
+//         if(head==null){
+//             return -1;
+//         }
+//         if(head.data==key){
+//             return 0;
+//         }
+//         int idx=helper(head.next,key);
+//         if(idx == -1){
+//             return -1;
+//         }
+//         return idx+1;
+//     }
+//     public int recsearch(int key){
+//         return helper(head,key);
+//     }
+//     public static void main(String[] args) {
+//         MyLinkedlist l1 = new MyLinkedlist();
+//         l1.addFirst(2); 
+//         l1.addFirst(1);
+//         l1.addFirst(5);
+//         l1.addFirst(3);
+//         l1.addFirst(4);
+//         l1.print(); 
+//         // l1.last_delete();
+//         // l1.print(); 
+//         System.out.println(l1.itrsearch(2));
+//         System.out.println(l1.itrsearch(7));
+//         System.out.println(l1.recsearch(3));
+//         System.out.println(l1.recsearch(7));
+//     }
+// }
+
+
 import java.util.*;
-public class MyLinkedlist {
-    public static class Node {
+public class MyLinkedlist{
+    public static class Node{
         int data;
         Node next;
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
+        public Node(int data){
+            this.data=data;
+            this.next=null;
         }
     }
     public static Node head;
     public static Node tail;
-    public void addFirst(int data) { 
-        Node newnode = new Node(data);
-        if (head == null) {
-            head = tail = newnode;
-            return;
-        }
-        newnode.next = head;
-        head = newnode;
-    }
-    public void last_delete(){
+    public void addFirst(int data){
+        Node newnode=new Node(data);
         if(head==null){
-            System.out.println("LL is empty");
-            return;
-        }  
-        if(head.next==null){
-            head=null;
-            return;
+            head=tail=newnode;
+        }else { 
+            newnode.next = head;
+            head = newnode;
         }
-        Node cur=head;
-        while(cur.next.next != null){
-            cur=cur.next;
-        }
-        cur.next=null;
     }
-    public void print() { 
-        if (head == null) {
-            System.out.println("Linked List is Empty");
+    public void print(){
+        if(head==null){
+            System.out.println("Linked list is empty");
             return;
         }
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data + " ");
-            temp = temp.next;
+        Node temp=head;
+        while(temp != null){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
         }
         System.out.println();
     }
-    public int itrsearch(int key){
-        Node temp=head;
-        int i=0;
-        while(temp != null){
-            if(temp.data==key){
-                return i;
-            }
-            temp=temp.next;
-            i++;
+    public void reverse(){
+        if (head == null || head.next == null) {
+            return; 
         }
-        return -1;
+        Node prev=null;
+        Node curr=head;
+        Node next;
+        tail=head;
+        while(curr != null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+        tail.next = null;
     }
-    public int helper(Node head,int key){
-        if(head==null){
-            return -1;
-        }
-        if(head.data==key){
-            return 0;
-        }
-        int idx=helper(head.next,key);
-        if(idx == -1){
-            return -1;
-        }
-        return idx+1;
-    }
-    public int recsearch(int key){
-        return helper(head,key);
-    }
-    public static void main(String[] args) {
-        MyLinkedlist l1 = new MyLinkedlist();
-        l1.addFirst(2); 
+    public static void main(String[] args){
+        MyLinkedlist l1=new MyLinkedlist();
         l1.addFirst(1);
-        l1.addFirst(5);
+        l1.addFirst(2);
         l1.addFirst(3);
         l1.addFirst(4);
-        l1.print(); 
-        // l1.last_delete();
-        // l1.print(); 
-        System.out.println(l1.itrsearch(2));
-        System.out.println(l1.itrsearch(7));
-        System.out.println(l1.recsearch(3));
-        System.out.println(l1.recsearch(7));
+        l1.addFirst(5);
+        l1.print();
+        l1.reverse();
+        l1.print();
     }
 }
