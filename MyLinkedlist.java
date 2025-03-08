@@ -418,6 +418,123 @@
 // }
 
 
+// import java.util.*;
+// public class MyLinkedlist{
+//     public static class Node{
+//         int data;
+//         Node next;
+//         public Node(int data){
+//             this.data=data;
+//             this.next=null;
+//         }
+//     }
+//     public static Node head;
+//     public static Node tail;
+//     public void addFirst(int data){
+//         Node newnode=new Node(data);
+//         if(head==null){
+//             head=tail=newnode;
+//         }else { 
+//             newnode.next = head;
+//             head = newnode;
+//         }
+//     }
+//     public void print(){
+//         if(head==null){
+//             System.out.println("Linked list is empty");
+//             return;
+//         }
+//         Node temp=head;
+//         while(temp != null){
+//             System.out.print(temp.data+" ");
+//             temp=temp.next;
+//         }
+//         System.out.println();
+//     }
+//     public void reverse(){
+//         if(head == null || head.next == null) {
+//             return; 
+//         }
+//         Node prev=null;
+//         Node curr=head;
+//         Node next;
+//         tail=head;
+//         while(curr != null){
+//             next=curr.next;
+//             curr.next=prev;
+//             prev=curr;
+//             curr=next;
+//         }
+//         head=prev;
+//         tail.next = null;
+//     }
+//     public void deletenthnode(int n){
+//         int sz=0;
+//         Node temp=head;
+//         while(temp != null){
+//             temp=temp.next;
+//             sz++;
+//         }
+//         if(n==sz){
+//             head=head.next;
+//             return;
+//         }
+//         int i=1;
+//         int itofind=sz-n;
+//         Node prev=head;
+//         while(i<itofind){
+//             prev=prev.next;
+//             i++;
+//         }
+//         prev.next=prev.next.next;
+//         return;
+//     }
+//     public Node findmid(Node head){
+//         Node slow=head;
+//         Node fast=head;
+//         while(fast != null && fast.next != null){
+//             slow=slow.next;
+//             fast=fast.next.next;
+//         }
+//         return slow;
+//     }
+//     public boolean checkpalindrome(){
+//         if(head==null || head.next==null){
+//             return true;
+//         }
+//         Node midNode=findmid(head);
+//         Node prev=null;
+//         Node curr=midNode;
+//         Node next;
+//         while(curr != null){
+//             next=curr.next;
+//             curr.next=prev;
+//             prev=curr;
+//             curr=next;
+//         }
+//         Node right=prev;
+//         Node left=head;
+//         while(right != null){
+//             if(left.data != right.data){
+//                 return false;
+//             }
+//             left=left.next;
+//             right=right.next;
+//         }
+//         return true;
+//     }
+//     public static void main(String[] args){
+//         MyLinkedlist l1=new MyLinkedlist();
+//         l1.addFirst(1);
+//         l1.addFirst(2);
+//         l1.addFirst(2);
+//         l1.addFirst(1);
+//         l1.print();
+//         System.out.println(l1.checkpalindrome());
+//     }
+// }
+
+
 import java.util.*;
 public class MyLinkedlist{
     public static class Node{
@@ -430,106 +547,23 @@ public class MyLinkedlist{
     }
     public static Node head;
     public static Node tail;
-    public void addFirst(int data){
-        Node newnode=new Node(data);
-        if(head==null){
-            head=tail=newnode;
-        }else { 
-            newnode.next = head;
-            head = newnode;
-        }
-    }
-    public void print(){
-        if(head==null){
-            System.out.println("Linked list is empty");
-            return;
-        }
-        Node temp=head;
-        while(temp != null){
-            System.out.print(temp.data+" ");
-            temp=temp.next;
-        }
-        System.out.println();
-    }
-    public void reverse(){
-        if(head == null || head.next == null) {
-            return; 
-        }
-        Node prev=null;
-        Node curr=head;
-        Node next;
-        tail=head;
-        while(curr != null){
-            next=curr.next;
-            curr.next=prev;
-            prev=curr;
-            curr=next;
-        }
-        head=prev;
-        tail.next = null;
-    }
-    public void deletenthnode(int n){
-        int sz=0;
-        Node temp=head;
-        while(temp != null){
-            temp=temp.next;
-            sz++;
-        }
-        if(n==sz){
-            head=head.next;
-            return;
-        }
-        int i=1;
-        int itofind=sz-n;
-        Node prev=head;
-        while(i<itofind){
-            prev=prev.next;
-            i++;
-        }
-        prev.next=prev.next.next;
-        return;
-    }
-    public Node findmid(Node head){
+    public static boolean isCycle(){   //Floyd's CFA
         Node slow=head;
         Node fast=head;
         while(fast != null && fast.next != null){
             slow=slow.next;
             fast=fast.next.next;
-        }
-        return slow;
-    }
-    public boolean checkpalindrome(){
-        if(head==null || head.next==null){
-            return true;
-        }
-        Node midNode=findmid(head);
-        Node prev=null;
-        Node curr=midNode;
-        Node next;
-        while(curr != null){
-            next=curr.next;
-            curr.next=prev;
-            prev=curr;
-            curr=next;
-        }
-        Node right=prev;
-        Node left=head;
-        while(right != null){
-            if(left.data != right.data){
-                return false;
+            if(slow==fast){
+                return true;
             }
-            left=left.next;
-            right=right.next;
         }
-        return true;
+        return false;
     }
     public static void main(String[] args){
-        MyLinkedlist l1=new MyLinkedlist();
-        l1.addFirst(1);
-        l1.addFirst(2);
-        l1.addFirst(2);
-        l1.addFirst(1);
-        l1.print();
-        System.out.println(l1.checkpalindrome());
+        head=new Node(1);
+        head.next=new Node(2);
+        head.next.next=new Node(3);
+        head.next.next.next=head;
+        System.out.println(isCycle());
     }
-}
+}    
