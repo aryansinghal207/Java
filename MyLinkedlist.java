@@ -468,6 +468,27 @@ public class MyLinkedlist{
         head=prev;
         tail.next = null;
     }
+    public void deletenthnode(int n){
+        int sz=0;
+        Node temp=head;
+        while(temp != null){
+            temp=temp.next;
+            sz++;
+        }
+        if(n==sz){
+            head=head.next;
+            return;
+        }
+        int i=1;
+        int itofind=sz-n;
+        Node prev=head;
+        while(i<itofind){
+            prev=prev.next;
+            i++;
+        }
+        prev.next=prev.next.next;
+        return;
+    }
     public static void main(String[] args){
         MyLinkedlist l1=new MyLinkedlist();
         l1.addFirst(1);
@@ -477,6 +498,8 @@ public class MyLinkedlist{
         l1.addFirst(5);
         l1.print();
         l1.reverse();
+        l1.print();
+        l1.deletenthnode(3);
         l1.print();
     }
 }
