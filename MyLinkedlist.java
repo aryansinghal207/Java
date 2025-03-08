@@ -489,17 +489,47 @@ public class MyLinkedlist{
         prev.next=prev.next.next;
         return;
     }
+    public Node findmid(Node head){
+        Node slow=head;
+        Node fast=head;
+        while(fast != null && fast.next != null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+    }
+    public boolean checkpalindrome(){
+        if(head==null || head.next==null){
+            return true;
+        }
+        Node midNode=findmid(head);
+        Node prev=null;
+        Node curr=midNode;
+        Node next;
+        while(curr != null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        Node right=prev;
+        Node left=head;
+        while(right != null){
+            if(left.data != right.data){
+                return false;
+            }
+            left=left.next;
+            right=right.next;
+        }
+        return true;
+    }
     public static void main(String[] args){
         MyLinkedlist l1=new MyLinkedlist();
         l1.addFirst(1);
         l1.addFirst(2);
-        l1.addFirst(3);
-        l1.addFirst(4);
-        l1.addFirst(5);
+        l1.addFirst(2);
+        l1.addFirst(1);
         l1.print();
-        l1.reverse();
-        l1.print();
-        l1.deletenthnode(3);
-        l1.print();
+        System.out.println(l1.checkpalindrome());
     }
 }
