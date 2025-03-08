@@ -452,7 +452,7 @@ public class MyLinkedlist{
         System.out.println();
     }
     public void reverse(){
-        if (head == null || head.next == null) {
+        if(head == null || head.next == null) {
             return; 
         }
         Node prev=null;
