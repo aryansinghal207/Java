@@ -24,6 +24,17 @@ public class Doublelinkedlist{
         head.prev=newNode;
         head=newNode;
     }
+    public void addlast(int data){
+        Node newNode=new Node(data);
+        size++;
+        if(head==null){
+            head=tail=newNode;
+            return;
+        }
+        tail.next=newNode;
+        newNode.prev = tail;
+        tail=newNode;
+    }
     public int removefirst(){
         if(head == null){
             System.out.println("DLL is empty");
@@ -38,6 +49,21 @@ public class Doublelinkedlist{
         int val=head.data;
         head=head.next;
         head.prev=null;
+        size--;
+        return val;
+    }
+    public int removelast(){
+        if(head == null){
+            System.out.println("DLL is empty");
+            return Integer.MIN_VALUE;
+        }
+        if(size==1){
+            head=tail=null;
+            size--;
+        }
+        int val=tail.data;
+        tail=tail.prev;
+        tail.next=null;
         size--;
         return val;
     }
@@ -58,8 +84,11 @@ public class Doublelinkedlist{
         dll.addFirst(3);
         dll.addFirst(2);
         dll.addFirst(1);
+        dll.addlast(5);
         dll.print();
+        System.out.println(dll.size);
         dll.removefirst();
+        dll.removelast();
         dll.print();
         System.out.print(dll.size);
     }
