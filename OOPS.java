@@ -1,3 +1,12 @@
+// # Compile-Time Polymorphism (Method Overloading)
+// Achieved through method overloading.
+// The method name is the same, but the parameters (number or type) are different.
+
+// # Run-Time Polymorphism (Method Overriding)
+// Achieved through method overriding.
+// A subclass provides a specific implementation of a method that is already defined in the parent class.
+
+
 // public class OOPS{
 //     public static void main(String[] args){
 //         Pen p1=new Pen();
@@ -62,28 +71,66 @@
 // }
 
 
-// Interfaces
+// // Interfaces
+// public class OOPS{
+//     public static void main(String args[]){
+//         Queen q=new Queen();
+//         q.moves();
+//     }
+// }
+// interface ChessPlayer{
+//     void moves();
+// }
+// class Queen implements ChessPlayer{
+//     public void moves(){
+//         System.out.println("up,down,left,right,diagonal (in all 4 directions)");
+//     }
+// }
+// class Rook implements ChessPlayer{
+//     public void moves(){
+//         System.out.println("up,down,left,right");
+//     }
+// }
+// class King implements ChessPlayer{
+//     public void moves(){
+//         System.out.println("up,down,left,right,diagonal (by 1 step)");
+//     }
+// }
+
+
+import java.util.*;
 public class OOPS{
-    public static void main(String args[]){
-        Queen q=new Queen();
-        q.moves();
+    public static void main(String[] args){
+        Person p1=new Person();    // Constructor is called.
+        Person p2=new Person(18,"Arush");
+        p1.name="Aryan";
+        p1.age=20;
+        System.out.println("Person's Age is : "+p1.age+" ");
+        System.out.println("Person's Name is : "+p1.name+" ");
+        p1.study();
+        p1.study(1);
+        System.out.println("Person's Age is : "+p2.age+" ");
+        System.out.println("Person's Name is : "+p2.name+" ");
+        System.out.println(Person.count);
     }
 }
-interface ChessPlayer{
-    void moves();
-}
-class Queen implements ChessPlayer{
-    public void moves(){
-        System.out.println("up,down,left,right,diagonal (in all 4 directions)");
+class Person{
+    String name;
+    int age;
+    static int count;    // Static Keyword
+    public Person(){     // Default Constructor
+        count++;
+        System.out.println("Creating an object of function class");
     }
-}
-class Rook implements ChessPlayer{
-    public void moves(){
-        System.out.println("up,down,left,right");
+    public Person(int age,String newName){      // Parameterized Constructor and Function Overloading 
+        count++;
+        name=newName;
+        this.age=age;    // this keyword
     }
-}
-class King implements ChessPlayer{
-    public void moves(){
-        System.out.println("up,down,left,right,diagonal (by 1 step)");
+    void study(){
+        System.out.println(name+" is studying.");
+    }
+    void study(int hours){ 
+        System.out.println(name+" is studying from last "+hours+" hour");
     }
 }
