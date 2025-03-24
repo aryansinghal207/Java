@@ -123,14 +123,14 @@
 //     }
 // }
 
-// // WAP to Count lowercase in a String
+// WAP to Count lowercase in a String
 import java.util.*;
 public class Stringfile {
     public static int countlower(String str){
         int count=0;
         for(int i=0;i<str.length();i++){
             char ch = str.charAt(i);
-            if(ch>='a' && ch<='z'){
+            if(ch >='a' && ch<='z'){
                 count++;
             }
         }
