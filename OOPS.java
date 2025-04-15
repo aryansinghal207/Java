@@ -98,39 +98,84 @@
 // }
 
 
-import java.util.*;
-public class OOPS{
-    public static void main(String[] args){
-        Person p1=new Person();    // Constructor is called.
-        Person p2=new Person(18,"Arush");
-        p1.name="Aryan";
-        p1.age=20;
-        System.out.println("Person's Age is : "+p1.age+" ");
-        System.out.println("Person's Name is : "+p1.name+" ");
-        p1.study();
-        p1.study(1);
-        System.out.println("Person's Age is : "+p2.age+" ");
-        System.out.println("Person's Name is : "+p2.name+" ");
-        System.out.println(Person.count);
-    }
-}
-class Person{
-    String name;
-    int age;
-    static int count;    // Static Keyword
-    public Person(){     // Default Constructor
-        count++;
-        System.out.println("Creating an object of function class");
-    }
-    public Person(int age,String newName){      // Parameterized Constructor and Function Overloading 
-        count++;
-        name=newName;
-        this.age=age;    // this keyword
-    }
-    void study(){
-        System.out.println(name+" is studying.");
-    }
-    void study(int hours){ 
-        System.out.println(name+" is studying from last "+hours+" hour");
-    }
-}
+// import java.util.*;
+// public class OOPS{
+//     public static void main(String[] args){
+//         Person p1=new Person();    // Constructor is called.
+//         Person p2=new Person(18,"Arush");
+//         p1.name="Aryan";
+//         p1.age=20;
+//         System.out.println("Person's Age is : "+p1.age+" ");
+//         System.out.println("Person's Name is : "+p1.name+" ");
+//         p1.study();
+//         p1.study(1);
+//         System.out.println("Person's Age is : "+p2.age+" ");
+//         System.out.println("Person's Name is : "+p2.name+" ");
+//         System.out.println(Person.count);
+//         Developer D1=new Developer(19, "Ayan");
+//         D1.study();
+//     }
+// }
+
+// class Developer extends Person{     // Inheritance 
+//     public Developer(int age,String name){
+//         super(age,name);       // Super Keyword :- It is used to call its parent constructor
+//     }
+// }
+
+// class Person{
+//     String name;
+//     int age;
+//     static int count;    // Static Keyword
+//     public Person(){     // Default Constructor
+//         count++;
+//         System.out.println("Creating an object of function class");
+//     }
+//     public Person(int age,String newName){      // Parameterized Constructor and Function Overloading 
+//         count++;
+//         name=newName;
+//         this.age=age;    // this keyword
+//     }
+//     void study(){
+//         System.out.println(name+" is studying.");
+//     }
+//     void study(int hours){ 
+//         System.out.println(name+" is studying from last "+hours+" hour");
+//     }
+// }
+
+
+// // Abstraction
+// import java.util.*;
+// public class OOPS{
+//     public static void main(String[] args){
+//         Audi a1=new Audi();
+//         a1.start();
+//     }
+// }
+// class Audi extends Car{
+//     void start(){
+//         System.out.println("Audi is starting");
+//     }
+// }
+// abstract class Car{     // Like we can't make object from this because this is a concept so we asign abstract class to it 
+//     int price;
+//     abstract void start();
+// }
+
+
+// // Interfaces
+// import java.util.*;
+// public class OOPS implements car{
+//     public static void main(String[] args){
+        
+//     }
+//     public void start(){
+//         System.out.println("My Car is Starting"); 
+//     }
+// }
+// interface car{
+//     void start();   // This is by default abstract
+// }
+
+

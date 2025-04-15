@@ -569,6 +569,68 @@
 // }
 
 
+// import java.util.*;
+// public class MyLinkedlist{
+//     public static class Node{
+//         int data;
+//         Node next;
+//         public Node(int data){
+//             this.data=data;
+//             this.next=null;
+//         }
+//     }
+//     public static Node head;
+//     public static Node tail;
+//     public static boolean isCycle(){   //Floyd's CFA
+//         Node slow=head;
+//         Node fast=head;
+//         while(fast != null && fast.next != null){
+//             slow=slow.next;
+//             fast=fast.next.next;
+//             if(slow==fast){
+//                 return true;
+//             }
+//         }
+//         return false;
+//     }
+//     public static void removecycle(){
+//         Node slow=head;
+//         Node fast=head;
+//         boolean Cycle=false;
+//         while(fast != null && fast.next != null){
+//             slow=slow.next;
+//             fast=fast.next.next;
+//             if(fast==slow){
+//                 Cycle=true;
+//                 break;
+//             }
+//         }
+//         if(!Cycle){
+//             return;
+//         }
+//         slow=head;
+//         Node prev=null;
+//         while(slow != fast){
+//             prev=fast;
+//             slow=slow.next;
+//             fast=fast.next;
+//         }
+//         prev.next=null;
+//     }
+//     public static void main(String[] args){
+//         head=new Node(1);
+//         Node temp=new Node(2);
+//         head.next=temp;
+//         head.next.next=new Node(3);
+//         head.next.next.next=temp;
+//         System.out.println(isCycle());
+//         removecycle();
+//         System.out.println(isCycle());
+//     }
+// }
+
+
+// Printing circular Linkedlist
 import java.util.*;
 public class MyLinkedlist{
     public static class Node{
@@ -577,54 +639,40 @@ public class MyLinkedlist{
         public Node(int data){
             this.data=data;
             this.next=null;
-        }
+        }        
     }
     public static Node head;
     public static Node tail;
-    public static boolean isCycle(){   //Floyd's CFA
-        Node slow=head;
-        Node fast=head;
-        while(fast != null && fast.next != null){
-            slow=slow.next;
-            fast=fast.next.next;
-            if(slow==fast){
-                return true;
-            }
-        }
-        return false;
-    }
-    public static void removecycle(){
-        Node slow=head;
-        Node fast=head;
-        boolean Cycle=false;
-        while(fast != null && fast.next != null){
-            slow=slow.next;
-            fast=fast.next.next;
-            if(fast==slow){
-                Cycle=true;
-                break;
-            }
-        }
-        if(!Cycle){
+    public static void addFirst(int data){
+        Node newNode=new Node(data);
+        if(head == null){
+            head=tail=newNode;
+            tail.next=head;
             return;
         }
-        slow=head;
-        Node prev=null;
-        while(slow != fast){
-            prev=fast;
-            slow=slow.next;
-            fast=fast.next;
+        newNode.next=head;
+        head=newNode;
+        tail.next=head;
+    }
+    public static void printList(){
+        if(head==null){
+            System.out.println("Linkedlist is empty");
+            return;
         }
-        prev.next=null;
+        Node temp = head;
+        do{
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        } while(temp != head);
+        System.out.println("Back to head");
     }
     public static void main(String[] args){
-        head=new Node(1);
-        Node temp=new Node(2);
-        head.next=temp;
-        head.next.next=new Node(3);
-        head.next.next.next=temp;
-        System.out.println(isCycle());
-        removecycle();
-        System.out.println(isCycle());
+        MyLinkedlist l1 = new MyLinkedlist();
+        l1.addFirst(5); 
+        l1.addFirst(4);
+        l1.addFirst(3);
+        l1.addFirst(2);
+        l1.addFirst(1);
+        l1.printList();
     }
 }
