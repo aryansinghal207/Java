@@ -43,7 +43,7 @@
 // import java.util.*;
 // public class Stackcode{
 //     static class Node{
-//         int data;
+//         int data; 
 //         Node next;
 //         Node(int data){
 //             this.data=data;
@@ -140,26 +140,96 @@
 // }
 
 
-// Reverse a string using Stack
-import java.util.*;
-public class Stackcode{
-    public static String reverseString(String str){
-        Stack<Character> s=new Stack<>();
-        int idx=0;
-        while(idx<str.length()){
-            s.push(str.charAt(idx));
-            idx++;
-        }
-        StringBuilder result=new StringBuilder("");
-        while(!s.isEmpty()){
-            char curr=s.pop();
-            result.append(curr);
-        }
-        return result.toString();
-    }
-    public static void main(String[] args){
-        String str="aryan";
-        String result=reverseString(str);
-        System.out.println(result);
-    }
-}
+// // Reverse a string using Stack
+// import java.util.*;
+// public class Stackcode{
+//     public static String reverseString(String str){
+//         Stack<Character> s=new Stack<>();
+//         int idx=0;
+//         while(idx<str.length()){
+//             s.push(str.charAt(idx));
+//             idx++;
+//         }
+//         StringBuilder result=new StringBuilder("");
+//         while(!s.isEmpty()){
+//             char curr=s.pop();
+//             result.append(curr);
+//         }
+//         return result.toString();
+//     }
+//     public static void main(String[] args){
+//         String str="aryan";
+//         String result=reverseString(str);
+//         System.out.println(result);
+//     }
+// }
+
+
+// // Reverse a string using without using extra space
+// import java.util.*;
+// public class Stackcode{
+//     public static void pushAtbottom(Stack<Integer> s,int data){
+//         if(s.isEmpty()){
+//             s.push(data);
+//             return;
+//         }
+//         int top=s.pop();
+//         pushAtbottom(s,data);
+//         s.push(top);
+//     }
+//     public static void reverseStack(Stack<Integer> s){
+//         if(s.isEmpty()){
+//             return;
+//         }
+//         int top=s.pop();
+//         reverseStack(s);
+//         pushAtbottom(s,top);
+//     }
+//     public static void printStack(Stack<Integer> s){
+//         while(!s.isEmpty()){
+//             System.out.println(s.pop());
+//         }
+//     }
+//     public static void main(String[] args){
+//         Stack<Integer> s=new Stack<>();
+//         s.push(1);
+//         s.push(2);
+//         s.push(3);
+//         s.push(4);
+//         reverseStack(s);
+//         printStack(s);
+//     }
+// }
+
+
+// // Stock Span Problem   
+// import java.util.*;
+// public class Stackcode{
+//     public static void Stockspan(int Stocks[],int span[]){
+//         Stack<Integer> s=new Stack<>();
+//         span[0]=1;
+//         s.push(0);
+//         for(int i=1;i<Stocks.length;i++){
+//             int currprice=Stocks[i];
+//             while(!s.isEmpty() && currprice>Stocks[s.peek()]){
+//                 s.pop();
+//             }
+//             if(s.isEmpty()){
+//                 span[i]=i+1;
+//             }else{
+//                 int prevhigh=s.peek();
+//                 span[i]=i-prevhigh;
+//             }
+//             s.push(i);
+//         }
+//     }
+//     public static void main(String[] args){
+//         int Stocks[]={100,80,60,70,60,85,100};
+//         int span[]=new int[Stocks.length];
+//         Stockspan(Stocks,span);
+//         for(int i=0;i<span.length;i++){
+//             System.out.println(span[i]+" ");
+//         }
+//     }
+// }
+
