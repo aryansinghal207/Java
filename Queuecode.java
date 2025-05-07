@@ -89,7 +89,6 @@
 //                 System.out.println("Empty Queue");
 //                 return -1;
 //             }
-
 //             int result=arr[front];
 //             if(rear==front){
 //                 rear=front=-1;
@@ -124,7 +123,7 @@
 
 
 // import java.util.*;
-// class Node {
+// class Node{
 //     int data;
 //     Node next;
 //     Node(int new_data) {
@@ -132,10 +131,10 @@
 //         next = null;
 //     }
 // }
-// class Queue {
+// class Queue{
 //     private Node front;
 //     private Node rear;
-//     public Queue() {
+//     public Queue(){
 //         front = rear = null;
 //     }
 //     public boolean isEmpty() {
@@ -452,3 +451,37 @@
 //         }
 //     }
 // }
+
+
+// // Queue using Java Collection Framework
+// import java.util.*;
+// public class Queuecode{
+//     public static void main(String[] args){
+//         // Queue<Integer> q=new LinkedList<>();
+//         Queue<Integer> q=new ArrayDeque<>(); 
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         while(!q.isEmpty()){
+//             System.out.println(q.peek());
+//             q.remove();
+//         }
+//     }
+// }
+
+
+// Queue Using two pointer
+import java.util.*;
+public class Queuecode{
+    public static void main(String[] args){
+        // Queue<Integer> q=new LinkedList<>();
+        Queue<Integer> q=new ArrayDeque<>(); 
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        while(!q.isEmpty()){
+            System.out.println(q.peek());
+            q.remove();
+        }
+    }
+}
