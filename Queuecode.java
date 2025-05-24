@@ -699,35 +699,64 @@
 // }
 
 
-// Queue Reversal
+// // Queue Reversal
+// import java.util.*;
+// public class Queuecode{
+//     public static void reverse(Queue<Integer> q){
+//         Stack<Integer> s=new Stack<>();
+//         int size=q.size();
+//         while(!q.isEmpty()){
+//             s.add(q.remove());
+//         }
+//         while(!s.isEmpty()){
+//             q.add(s.pop());
+//         }
+//     }
+//     public static void main(String[] args){
+//         Queue<Integer> q=new LinkedList<>();
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         q.add(4);
+//         q.add(5);
+//         q.add(6);
+//         q.add(7);
+//         q.add(8);
+//         q.add(9);
+//         q.add(10);
+//         reverse(q);
+//         while(!q.isEmpty()){
+//             System.out.print(q.remove()+" ");
+//         }
+//         System.out.print("");
+//     }
+// }
+
+
+// Deque : Double Ended queue (It is used to operate things from starting as well as ending.)
+// Implementation of Stack using Deque
 import java.util.*;
 public class Queuecode{
-    public static void reverse(Queue<Integer> q){
-        Stack<Integer> s=new Stack<>();
-        int size=q.size();
-        while(!q.isEmpty()){
-            s.add(q.remove());
+    public static class Stack{
+        Deque<Integer> deque=new LinkedList<>();
+        public void push(int data){
+            deque.addLast(data);
         }
-        while(!s.isEmpty()){
-            q.add(s.pop());
+        public int pop(){
+            return deque.removeLast();
+        }
+        public int peek(){
+            return deque.getLast();
         }
     }
     public static void main(String[] args){
-        Queue<Integer> q=new LinkedList<>();
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        q.add(4);
-        q.add(5);
-        q.add(6);
-        q.add(7);
-        q.add(8);
-        q.add(9);
-        q.add(10);
-        reverse(q);
-        while(!q.isEmpty()){
-            System.out.print(q.remove()+" ");
-        }
-        System.out.print("");
+        Stack s=new Stack();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        System.out.println(s.peek());
+        System.out.println(s.pop());
+        System.out.println(s.pop());
+        System.out.println(s.pop());
     }
 }
