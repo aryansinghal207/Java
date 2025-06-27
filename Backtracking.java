@@ -45,7 +45,7 @@
 // }
 
 
-// WAP to find subset of a string
+// WAP to print the permutation of a string
 import java.util.*;
 public class Backtracking{
     public static void permutation(String str,String ans){
