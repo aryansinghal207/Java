@@ -45,22 +45,45 @@
 // }
 
 
-// WAP to print the permutation of a string
+// // WAP to print the permutation of a string
+// import java.util.*;
+// public class Backtracking{
+//     public static void permutation(String str,String ans){
+//         if(str.length()==0){
+//             System.out.println(ans);
+//             return;
+//         }
+//         for(int i=0;i<str.length();i++){
+//             char curr=str.charAt(i);
+//             String newstr=str.substring(0,i)+str.substring(i+1);
+//             permutation(newstr,ans+curr);
+//         }
+//     }
+//     public static void main(String[] args){
+//         String str="abc";
+//         permutation(str,"");
+//     }
+// }
+
+
+
+// WAP to find subset of a string
 import java.util.*;
-public class Backtracking{
-    public static void permutation(String str,String ans){
-        if(str.length()==0){
-            System.out.println(ans);
+public class Backtracking {
+    public static void generateSubsets(String str, int index, String current) {
+        if (index == str.length()) {
+            System.out.println(current);
             return;
         }
-        for(int i=0;i<str.length();i++){
-            char curr=str.charAt(i);
-            String newstr=str.substring(0,i)+str.substring(i+1);
-            permutation(newstr,ans+curr);
-        }
+        generateSubsets(str, index + 1, current + str.charAt(index));
+        generateSubsets(str, index + 1, current);
     }
-    public static void main(String[] args){
-        String str="abc";
-        permutation(str,"");
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+
+        System.out.println("Subsets of the string are:");
+        generateSubsets(input, 0, "");
     }
 }
