@@ -201,8 +201,7 @@
 
 
 // Calculate the sum of nodes of a tree
-public class Binarytreecodes {
-
+public class BinaryTreecode{
    static class Node {
        int data;
        Node left;
