@@ -202,13 +202,11 @@
 //        int data;
 //        Node left;
 //        Node right;
-
 //        Node(int data) {
 //            this.data = data;
 //            this.left = null;
 //        }
 //    }
-
 //    public static int countsum(Node root){
 //        int sum=0;
 //        if(root == null) return 0;
@@ -217,7 +215,6 @@
 //        sum+=leftsum+rightsum+root.data;
 //        return sum;
 //    }
-
 //    public static void main(String[] args) {
 //        Node root=new Node(1);
 //        root.left=new Node(2);
