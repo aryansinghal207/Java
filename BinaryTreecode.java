@@ -368,7 +368,6 @@
 
 // Top View of a tree
 import java.util.*;
-
 public class BinaryTreecode {
     public static class Node {
         int data;
@@ -378,41 +377,31 @@ public class BinaryTreecode {
             this.left = this.right = null;
         }
     }
-
     public static class Info {
         Node node;
         int hd;
-
         public Info(Node node, int hd) {
             this.node = node;
             this.hd = hd;
         }
     }
-
     public static void topview(Node root) {
         if (root == null) return;
-
         Map<Integer, Node> map = new TreeMap<>(); 
         Queue<Info> q = new LinkedList<>();
-
         q.add(new Info(root, 0));
-
         while (!q.isEmpty()) {
             Info curr = q.remove();
-
             if (!map.containsKey(curr.hd)) {
                 map.put(curr.hd, curr.node);
             }
-
             if (curr.node.left != null) {
                 q.add(new Info(curr.node.left, curr.hd - 1));
             }
-
             if (curr.node.right != null) {
                 q.add(new Info(curr.node.right, curr.hd + 1));
             }
         }
-
         for (Node node : map.values()) {
             System.out.print(node.data + " ");
         }
