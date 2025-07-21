@@ -277,39 +277,30 @@
 //     static class Node {
 //         int data;
 //         Node left, right;
-
 //         Node(int data) {
 //             this.data = data;
 //             this.left = this.right = null;
 //         }
 //     }
-
 //     static class TreeInfo {
 //         int height;
 //         int diameter;
-
 //         TreeInfo(int height, int diameter) {
 //             this.height = height;
 //             this.diameter = diameter;
 //         }
 //     }
-
 //     public static TreeInfo diameterOptimized(Node root) {
 //         if (root == null) {
 //             return new TreeInfo(0, 0);
 //         }
-
 //         TreeInfo left = diameterOptimized(root.left);
 //         TreeInfo right = diameterOptimized(root.right);
-
 //         int height = Math.max(left.height, right.height) + 1;
 //         int selfDiameter = left.height + right.height + 1;
-
 //         int maxDiameter = Math.max(selfDiameter, Math.max(left.diameter, right.diameter));
-
 //         return new TreeInfo(height, maxDiameter);
 //     }
-
 //     public static void main(String[] args) {
 //         Node root = new Node(1);
 //         root.left = new Node(2);
@@ -318,7 +309,6 @@
 //         root.left.right = new Node(5);
 //         root.right.left = new Node(6);
 //         root.right.right = new Node(7);
-
 //         System.out.println(diameterOptimized(root).diameter);
 //     }
 // }
