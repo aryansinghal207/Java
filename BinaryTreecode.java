@@ -319,13 +319,11 @@
 //     static class Node {
 //         int data;
 //         Node left, right;
-
 //         Node(int data) {
 //             this.data = data;
 //             this.left = this.right = null;
 //         }
 //     }
-
 //     public static boolean issubtree(Node root,Node subroot){
 //         if(root == null){
 //             return false;
@@ -337,7 +335,6 @@
 //         }
 //         return issubtree(root.left,subroot) || issubtree(root.right,subroot);
 //     }
-
 //     public static boolean isidentical(Node node,Node subroot){
 //         if(node==null && subroot==null){
 //             return true;
@@ -361,7 +358,6 @@
 //         root.left.right = new Node(5);
 //         root.right.left = new Node(6);
 //         root.right.right = new Node(7);
-
 //         Node subroot=new Node(2);
 //         subroot.left=new Node(4);
 //         subroot.right=new Node(5);
