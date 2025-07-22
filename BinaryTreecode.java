@@ -521,22 +521,6 @@ public class BinaryTreecode {
             this.left = this.right = null;
         }
     }
-    public static boolean getpath(Node root,int n,ArrayList<Node> path){
-        if(root==null){
-            return false;
-        }
-        path.add(root);
-        if(root.data==n){
-            return true;
-        }
-        boolean foundleft=getpath(root.left,n,path);
-        boolean foundright=getpath(root.right,n,path);
-        if(foundleft || foundright){
-            return true;
-        }
-        path.remove(path.size()-1);
-        return false;
-    }
     public static Node lca2(Node root,int n1,int n2){
         if(root==null || root.data==n1 || root.data==n2) return root;
         Node leftlca=lca2(root.left,n1,n2);
