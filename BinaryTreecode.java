@@ -488,7 +488,7 @@ public class BinaryTreecode {
         getpath(root,n1,path1);
         getpath(root,n2,path2);
         int i=0;
-        for(i=0;i<path1.size() && i<path2.size();i++){
+        for(;i<path1.size() && i<path2.size();i++){
             if(path1.get(i) != path2.get(i)){
                 break;
             }
