@@ -56,19 +56,32 @@
 // }
 
 
-// Iteration on HashMaps
+// // Iteration on HashMaps
+// import java.util.*;
+// public class Hashingcode{
+//     public static void main(String args[]){
+//         HashMap<String,Integer> hm=new HashMap<>();
+//         hm.put("India",100);
+//         hm.put("China",90);
+//         hm.put("US",60);
+//         hm.put("Nepal",20);
+//         Set<String> keys=hm.keySet();
+//         System.out.println(keys);
+//         for(String k : keys){
+//             System.out.println("Key = "+k+" , Values = "+hm.get(k));
+//         }
+//     }
+// }
+
+
+// Implementation LinkedHashMap
 import java.util.*;
 public class Hashingcode{
     public static void main(String args[]){
-        HashMap<String,Integer> hm=new HashMap<>();
-        hm.put("India",100);
-        hm.put("China",90);
-        hm.put("US",60);
-        hm.put("Nepal",20);
-        Set<String> keys=hm.keySet();
-        System.out.println(keys);
-        for(String k : keys){
-            System.out.println("Key = "+k+" , Values = "+hm.get(k));
-        }
+        LinkedHashMap<String,Integer> lhm=new LinkedHashMap<>();
+        lhm.put("India",100);
+        lhm.put("China",200);
+        lhm.put("Nepal",50);
+        System.out.println(lhm);
     }
 }
