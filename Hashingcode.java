@@ -48,6 +48,9 @@ public class Hashingcode{
         System.out.println(hm);
         // size
         System.out.println(hm.size());
-
+        // Is Empty
+        System.out.println(hm.isEmpty());
+        hm.clear();
+        System.out.println(hm.isEmpty());
     }
 }
