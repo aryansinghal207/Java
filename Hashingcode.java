@@ -46,5 +46,8 @@ public class Hashingcode{
         // remove - O(1)
         System.out.println(hm.remove("India"));
         System.out.println(hm);
+        // size
+        System.out.println(hm.size());
+
     }
 }
