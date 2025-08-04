@@ -43,5 +43,8 @@ public class Hashingcode{
         //containsKey - O(1)
         System.out.println(hm.containsKey("India"));
         System.out.println(hm.containsKey("Indonesia"));
+        // remove - O(1)
+        System.out.println(hm.remove("India"));
+        System.out.println(hm);
     }
 }
