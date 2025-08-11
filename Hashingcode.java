@@ -88,13 +88,39 @@
 
 
 // // Implementing TreeMap
+// import java.util.*;
+// public class Hashingcode{
+//     public static void main(String args[]){
+//         TreeMap<String,Integer> tm=new TreeMap<>();
+//         tm.put("India",100);
+//         tm.put("China",200);
+//         tm.put("Nepal",50);
+//         System.out.println(tm);
+//     }
+// }
+
+
+// Majority Element in HashMap
 import java.util.*;
 public class Hashingcode{
     public static void main(String args[]){
-        TreeMap<String,Integer> tm=new TreeMap<>();
-        tm.put("India",100);
-        tm.put("China",200);
-        tm.put("Nepal",50);
-        System.out.println(tm);
+        int arr[]={1,2,3,4,5,1,1,2,1};
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        for(int i=0;i<arr.length;i++){
+            if(hm.containsKey(arr[i])){
+                int val=hm.get(arr[i]);
+                hm.put(arr[i],val+1);
+            }else{
+                hm.put(arr[i],1);
+            }
+        }
+        Set<Integer> keys=hm.keySet();
+        for(Integer k : keys){
+            if(hm.get(k) > arr.length/3){
+                System.out.println("Majority Element is: " + k);
+                return;
+            }
+        }
+        System.out.println("No Majority Element found");
     }
 }
