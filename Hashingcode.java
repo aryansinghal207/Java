@@ -100,21 +100,24 @@
 // }
 
 
-// Majority Element in HashMap
-import java.util.*;
-public class Hashingcode{
-    public static void main(String args[]){
-        int arr[]={1,2,3,4,5,1,1,2,1};
-        HashMap<Integer,Integer> hm=new HashMap<>();
-        for(int i=0;i<arr.length;i++){
-            hm.put(arr[i],hm.getOrDefault(arr[i], 0) + 1);
-        }
-        for(Integer k : hm.keySet()){
-            if(hm.get(k) > arr.length/3){
-                System.out.println("Majority Element is: " + k);
-                return;
-            }
-        }
-        System.out.println("No Majority Element found");
-    }
-}
+// // Majority Element in HashMap
+// import java.util.*;
+// public class Hashingcode{
+//     public static void main(String args[]){
+//         int arr[]={1,2,3,4,5,1,1,2,1};
+//         HashMap<Integer,Integer> hm=new HashMap<>();
+//         for(int i=0;i<arr.length;i++){
+//             hm.put(arr[i],hm.getOrDefault(arr[i], 0) + 1);
+//         }
+//         for(Integer k : hm.keySet()){
+//             if(hm.get(k) > arr.length/3){
+//                 System.out.println("Majority Element is: " + k);
+//                 return;
+//             }
+//         }
+//         System.out.println("No Majority Element found");
+//     }
+// }
+
+
+// Valid Anagram using HashMap
