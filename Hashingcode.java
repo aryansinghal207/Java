@@ -107,15 +107,9 @@ public class Hashingcode{
         int arr[]={1,2,3,4,5,1,1,2,1};
         HashMap<Integer,Integer> hm=new HashMap<>();
         for(int i=0;i<arr.length;i++){
-            if(hm.containsKey(arr[i])){
-                int val=hm.get(arr[i]);
-                hm.put(arr[i],val+1);
-            }else{
-                hm.put(arr[i],1);
-            }
+            hm.put(arr[i],hm.getOrDefault(arr[i], 0) + 1);
         }
-        Set<Integer> keys=hm.keySet();
-        for(Integer k : keys){
+        for(Integer k : hm.keySet()){
             if(hm.get(k) > arr.length/3){
                 System.out.println("Majority Element is: " + k);
                 return;
