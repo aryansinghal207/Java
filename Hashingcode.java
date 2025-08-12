@@ -201,15 +201,17 @@
 // }
 
 
-// Count Distinct Element
-import java.util.*;
-public class Hashingcode{
-    public static void main(String[] args){
-        int num[]={4,3,4,6,6,2,4,6,1,2,5,7,8};
-        HashSet<Integer> set=new HashSet<>();
-        for(int i=0;i<num.length;i++){
-            set.add(num[i]);
-        }
-        System.out.println("ans = "+set.size());
-    }
-}
+// // Count Distinct Element
+// import java.util.*;
+// public class Hashingcode{
+//     public static void main(String[] args){
+//         int num[]={4,3,4,6,6,2,4,6,1,2,5,7,8};
+//         HashSet<Integer> set=new HashSet<>();
+//         for(int i=0;i<num.length;i++){
+//             set.add(num[i]);
+//         }
+//         System.out.println("ans = "+set.size());
+//     }
+// }
+
+
