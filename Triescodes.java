@@ -4,7 +4,6 @@ public class Triescodes {
     public static class Node {
         Node[] children = new Node[26];
         boolean isEndOfWord=false;
-
         Node() {
             for (int i = 0; i < 26; i++) {
                 children[i] = null;
@@ -26,10 +25,24 @@ public class Triescodes {
         curr.isEndOfWord = true;
     }
 
+    public static boolean search(String key) {
+        Node curr = root;
+        for(int level = 0; level < key.length(); level++) {
+            int idx = key.charAt(level) - 'a';
+            if (curr.children[idx] == null) {
+                return false;
+            }
+            curr = curr.children[idx];
+        }
+        return curr.isEndOfWord == true;
+    }       
+
     public static void main(String[] args) {
         String words[]={"the", "a", "there", "any", "thee", "their"};
         for(int i=0;i< words.length; i++) {
             insert(words[i]);
         }
+        System.out.println(search("the"));
+        System.out.println(search("these"));
     }
 }
