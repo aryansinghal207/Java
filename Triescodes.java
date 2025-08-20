@@ -1,7 +1,7 @@
 // Creating a trie
 import java.util.*;
 public class Triescodes {
-    static class Node {
+    public static class Node {
         Node[] children = new Node[26];
         boolean isEndOfWord=false;
 
