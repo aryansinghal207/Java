@@ -107,7 +107,7 @@
 // }
 
 
-// Prefix Preorder
+// Prefix Preorder using tries
 import java.util.*;
 public class Triescodes{
     public static class Node{
