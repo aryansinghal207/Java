@@ -13,6 +13,7 @@ public class Triescodes {
 
     public static Node root = new Node();
 
+    // inserting data in trie
     public static void insert(String word) {
         Node curr = root;
         for(int level = 0; level < word.length(); level++) {
@@ -25,6 +26,7 @@ public class Triescodes {
         curr.isEndOfWord = true;
     }
 
+    // searching in trie
     public static boolean search(String key) {
         Node curr = root;
         for(int level = 0; level < key.length(); level++) {
