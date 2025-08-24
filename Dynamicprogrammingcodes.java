@@ -32,22 +32,43 @@
 //     }
 // }
 
-// Climbing Stairs (Variation)
+// // Climbing Stairs (Variation)
+// import java.util.*;
+// public class Dynamicprogrammingcodes{
+//     public static int countways(int n,int arr[]){
+//         if(n==0) return 1;
+//         if(n<0) return 0;
+//         if(arr[n]!=-1){
+//             return arr[n];
+//         }
+//         arr[n] = countways(n-1,arr)+countways(n-2,arr)+countways(n-3,arr);
+//         return arr[n];
+//     }
+//     public static void main(String[] args){
+//         int n=5;
+//         int ways[]=new int[n+1];
+//         Arrays.fill(ways,-1);
+//         System.out.println(countways(n,ways));
+//     }
+// }
+
+// Climbing Stairs (Tabulation)
 import java.util.*;
 public class Dynamicprogrammingcodes{
-    public static int countways(int n,int arr[]){
-        if(n==0) return 1;
-        if(n<0) return 0;
-        if(arr[n]!=-1){
-            return arr[n];
+    public static int countways(int n){
+        int dp[]=new int[n+1];
+        dp[0]=1;
+        for(int i=1;i<=n;i++){
+            if(i==1){
+                dp[i]=dp[i-1];
+            }else{
+                dp[i]=dp[i-1]+dp[i-2];  
+            }
         }
-        arr[n] = countways(n-1,arr)+countways(n-2,arr)+countways(n-3,arr);
-        return arr[n];
+        return dp[n];
     }
     public static void main(String[] args){
         int n=5;
-        int ways[]=new int[n+1];
-        Arrays.fill(ways,-1);
-        System.out.println(countways(n,ways));
+        System.out.println(countways(n));
     }
 }
