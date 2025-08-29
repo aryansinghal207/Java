@@ -94,7 +94,6 @@
 //     }
 // }
 
-
 // // 0-1 Knapsack (Memoization)
 // import java.util.*;
 // public class Dynamicprogrammingcodes{
@@ -126,7 +125,6 @@
 //         System.out.println(knapsack(val,wt,w,val.length,dp));
 //     }
 // }
-
 
 // // 0-1 Knapsack (Tabulation)
 // import java.util.*;
