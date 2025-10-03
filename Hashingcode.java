@@ -5,7 +5,7 @@
 //         hm.put("India",100);
 //         hm.put("India",101);
 //         hm.put("India",102);
-//         hm.put("India",103);   // HashMap does allow duplicate value and pick the last declared value of one
+//         hm.put("India",103);   // HashMap doesnot allow duplicate value and replaces the value if the same key is used again.
 //         System.out.println(hm);
 //     }
 // }
