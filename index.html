@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Principles - Study Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Slate & Sky -->
+    <!-- Application Structure Plan: A single-page tabbed interface to separate the two syllabus units for clarity. Each tab contains key concept summaries in cards, interactive flashcards for self-testing, and a list of potential exam questions tailored to the 5/10 mark structure. This structure is chosen to provide a focused, exam-oriented study experience, allowing the user to quickly navigate between topics and test their knowledge without being overwhelmed. -->
+    <!-- Visualization & Content Choices: Report Info: Planning/Decision-making processes -> Goal: Make sequential processes engaging and memorable -> Viz/Presentation Method: Horizontal Bar Chart (Chart.js) -> Interaction: Hover tooltips for step details -> Justification: Visualizes the flow of steps more effectively than a static list. Report Info: Classical vs. Neo-classical vs. Modern approaches -> Goal: Compare complex theories -> Viz/Presentation Method: HTML table -> Interaction: None -> Justification: A table provides the clearest, most direct comparison of features for study purposes. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .tab-button.active {
+            border-color: #0284c7;
+            background-color: #0284c7;
+            color: white;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .concept-card, .qa-card, .question-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .concept-card:hover, .qa-card:hover, .question-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .qa-card .answer {
+            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .qa-card.open .answer {
+            display: block;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-5xl font-bold text-slate-900">Management Principles Study Guide</h1>
+            <p class="text-slate-600 mt-2">A quick review for your 25-mark test.</p>
+        </header>
+
+        <nav class="flex justify-center border-b border-slate-200 mb-8">
+            <button class="tab-button text-lg font-medium py-3 px-6 border-b-2 border-transparent hover:bg-sky-100 hover:border-sky-500 transition active" data-tab="unit1">Unit 1: Intro to Management</button>
+            <button class="tab-button text-lg font-medium py-3 px-6 border-b-2 border-transparent hover:bg-sky-100 hover:border-sky-500 transition" data-tab="unit2">Unit 2: Planning & Decision Making</button>
+        </nav>
+
+        <main>
+            <section id="unit1" class="content-section active">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="concept-card bg-white p-6 rounded-lg shadow-md lg:col-span-3">
+                        <h3 class="font-bold text-xl text-sky-700 mb-2">Management - An Overview</h3>
+                        <p>Management is the process of planning, organizing, leading, and controlling the efforts of organization members and of using all other organizational resources to achieve stated organizational goals. The key is achieving goals <span class="font-semibold">efficiently</span> (doing things right) and <span class="font-semibold">effectively</span> (doing the right things).</p>
+                    </div>
+
+                    <div class="concept-card bg-white p-6 rounded-lg shadow-md lg:col-span-3">
+                        <h3 class="font-bold text-xl text-sky-700 mb-3">Evolution of Management Thought</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead>
+                                    <tr class="bg-slate-100">
+                                        <th class="p-3">Approach</th>
+                                        <th class="p-3">Key Focus</th>
+                                        <th class="p-3">Main Contributors</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-3 font-semibold">Classical</td>
+                                        <td class="p-3">Efficiency, structure, rules. Treating the organization as a machine.</td>
+                                        <td class="p-3">F.W. Taylor (Scientific), H. Fayol (Administrative), M. Weber (Bureaucracy)</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 font-semibold">Neo-classical (Human Relations)</td>
+                                        <td class="p-3">Social factors, employee morale, human behavior.</td>
+                                        <td class="p-3">Elton Mayo (Hawthorne Studies)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-semibold">Modern</td>
+                                        <td class="p-3">Organization as a system, adapting to the environment (Contingency Approach).</td>
+                                        <td class="p-3">Katz, Kahn, Fiedler</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="qa-card bg-white p-6 rounded-lg shadow-md cursor-pointer">
+                        <h3 class="font-bold text-xl text-sky-700">What are the key Managerial Skills?</h3>
+                        <p class="text-slate-500 text-sm mb-2">Click to reveal</p>
+                        <div class="answer mt-4 space-y-2 text-slate-700">
+                            <p><span class="font-semibold">1. Technical Skills:</span> Knowledge and proficiency in a specific field.</p>
+                            <p><span class="font-semibold">2. Human Skills:</span> The ability to work well with other people.</p>
+                            <p><span class="font-semibold">3. Conceptual Skills:</span> The ability to think and to conceptualize about abstract and complex situations.</p>
+                        </div>
+                    </div>
+
+                    <div class="qa-card bg-white p-6 rounded-lg shadow-md cursor-pointer">
+                        <h3 class="font-bold text-xl text-sky-700">Is Management a Science or an Art?</h3>
+                        <p class="text-slate-500 text-sm mb-2">Click to reveal</p>
+                        <div class="answer mt-4 space-y-2 text-slate-700">
+                            <p><span class="font-semibold">As a Science:</span> It has a systematized body of knowledge and universal principles.</p>
+                            <p><span class="font-semibold">As an Art:</span> It requires creativity, intuition, and practice to apply knowledge effectively.</p>
+                            <p><span class="font-semibold">Conclusion:</span> Management is a blend of both. It's an art based on a foundation of science.</p>
+                        </div>
+                    </div>
+
+                    <div class="qa-card bg-white p-6 rounded-lg shadow-md cursor-pointer">
+                        <h3 class="font-bold text-xl text-sky-700">Is Management a Profession?</h3>
+                        <p class="text-slate-500 text-sm mb-2">Click to reveal</p>
+                        <div class="answer mt-4 space-y-2 text-slate-700">
+                            <p>It has some characteristics of a profession (body of knowledge, formal training) but lacks others (mandatory ethical code, representative body like doctors/lawyers). It's on the path to becoming a full-fledged profession.</p>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-sky-50 border-l-4 border-sky-500 p-6 rounded-lg shadow-md lg:col-span-3 mt-6">
+                        <h3 class="font-bold text-xl text-sky-800 mb-4">Potential Exam Questions (Unit 1)</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><span class="font-semibold text-red-600">[5 Marks]</span> "Management is considered both a science and an art." Explain this statement.</li>
+                             <li><span class="font-semibold text-red-600">[5 Marks]</span> Briefly explain the three main managerial skills proposed by Robert Katz.</li>
+                            <li><span class="font-semibold text-orange-600">[10 Marks]</span> Discuss the evolution of management thought, highlighting the main contributions of the Classical and Neo-classical approaches.</li>
+                            <li><span class="font-semibold text-orange-600">[10 Marks]</span> What are the principles of Scientific Management given by F.W. Taylor? How are they relevant today?</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="unit2" class="content-section">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="concept-card bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl text-sky-700 mb-2">Planning - An Overview</h3>
+                        <p>Planning is the primary function of management. It involves defining goals, establishing strategies to achieve those goals, and developing plans to integrate and coordinate activities.</p>
+                    </div>
+
+                    <div class="concept-card bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl text-sky-700 mb-2">Types of Plans</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-semibold">By Breadth:</span> Strategic, Tactical, Operational.</li>
+                            <li><span class="font-semibold">By Time Frame:</span> Long-term, Short-term.</li>
+                            <li><span class="font-semibold">By Use:</span> Single-Use (for one-time events), Standing (ongoing).</li>
+                        </ul>
+                    </div>
+                    
+                     <div class="concept-card bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl text-sky-700 mb-2">Decision Making</h3>
+                        <p>Decision making is the cognitive process of selecting a course of action from among several alternatives. It's the core of planning.</p>
+                        <p class="mt-2"><span class="font-semibold">Types:</span> Programmed (routine, repetitive) and Non-Programmed (unique, unstructured).</p>
+                    </div>
+
+                    <div class="concept-card bg-white p-6 rounded-lg shadow-md lg:col-span-3">
+                        <h3 class="font-bold text-xl text-sky-700 mb-3 text-center">Steps in Planning Process</h3>
+                        <div class="chart-container relative h-64 md:h-80 w-full mx-auto">
+                           <canvas id="planningChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="concept-card bg-white p-6 rounded-lg shadow-md lg:col-span-3">
+                        <h3 class="font-bold text-xl text-sky-700 mb-3 text-center">Decision Making Process</h3>
+                         <div class="chart-container relative h-64 md:h-80 w-full mx-auto">
+                           <canvas id="decisionChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-sky-50 border-l-4 border-sky-500 p-6 rounded-lg shadow-md lg:col-span-3 mt-6">
+                        <h3 class="font-bold text-xl text-sky-800 mb-4">Potential Exam Questions (Unit 2)</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><span class="font-semibold text-red-600">[5 Marks]</span> Differentiate between Programmed and Non-Programmed decisions with examples.</li>
+                            <li><span class="font-semibold text-red-600">[5 Marks]</span> Explain different types of plans based on their use (Single-use vs. Standing).</li>
+                            <li><span class="font-semibold text-orange-600">[10 Marks]</span> "Planning is the most crucial step in management." Elaborate on this statement and explain the steps involved in the planning process.</li>
+                            <li><span class="font-semibold text-orange-600">[10 Marks]</span> Describe the rational decision-making process in detail. Why is it often difficult to be perfectly rational in real-world scenarios?</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const tab = button.dataset.tab;
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === tab) {
+                        section.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        const qaCards = document.querySelectorAll('.qa-card');
+        qaCards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('open');
+            });
+        });
+
+        const planningData = {
+            labels: [
+                '1. Setting Objectives',
+                '2. Developing Premises',
+                '3. Identifying Alternatives',
+                '4. Evaluating Alternatives',
+                '5. Selecting an Alternative',
+                '6. Implementing the Plan',
+                '7. Follow-up Action'
+            ],
+            datasets: [{
+                label: 'Process Step',
+                data: [1, 2, 3, 4, 5, 6, 7],
+                backgroundColor: 'rgba(56, 189, 248, 0.6)',
+                borderColor: 'rgba(2, 132, 199, 1)',
+                borderWidth: 1,
+            }]
+        };
+
+        const planningConfig = {
+            type: 'bar',
+            data: planningData,
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                },
+                scales: {
+                    x: {
+                        display: false,
+                    },
+                    y: {
+                         ticks: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const planningChartCtx = document.getElementById('planningChart').getContext('2d');
+        new Chart(planningChartCtx, planningConfig);
+
+        const decisionData = {
+            labels: [
+                '1. Identify the Problem',
+                '2. Gather Information',
+                '3. Identify Alternatives',
+                '4. Weigh the Evidence',
+                '5. Choose among Alternatives',
+                '6. Take Action',
+                '7. Review the Decision'
+            ],
+            datasets: [{
+                label: 'Process Step',
+                data: [1, 2, 3, 4, 5, 6, 7],
+                backgroundColor: 'rgba(34, 211, 238, 0.6)',
+                borderColor: 'rgba(8, 145, 178, 1)',
+                borderWidth: 1,
+            }]
+        };
+
+        const decisionConfig = {
+            type: 'bar',
+            data: decisionData,
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        display: false
+                    },
+                    y: {
+                        ticks: {
+                            font: {
+                                size: 14,
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        const decisionChartCtx = document.getElementById('decisionChart').getContext('2d');
+        new Chart(decisionChartCtx, decisionConfig);
+
+    </script>
+</body>
+</html>
