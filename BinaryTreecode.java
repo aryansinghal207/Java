@@ -253,10 +253,9 @@
 //         int lh=height(root.left);
 //         int rightdia=diameter(root.right);
 //         int rh=height(root.right);
-//         int selfdia=lh+rh+1;
+//         int selfdia=lh+rh;
 //         return Math.max(selfdia,Math.max(leftdia,rightdia));
 //     }
-
 //     public static void main(String[] args) {
 //         Node root=new Node(1);
 //         root.left=new Node(2);
