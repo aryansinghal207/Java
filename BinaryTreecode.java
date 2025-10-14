@@ -294,7 +294,7 @@
 //         TreeInfo left = diameterOptimized(root.left);
 //         TreeInfo right = diameterOptimized(root.right);
 //         int height = Math.max(left.height, right.height) + 1;
-//         int selfDiameter = left.height + right.height + 1;
+//         int selfDiameter = left.height + right.height;
 //         int maxDiameter = Math.max(selfDiameter, Math.max(left.diameter, right.diameter));
 //         return new TreeInfo(height, maxDiameter);
 //     }
