@@ -1,3 +1,4 @@
+// Make a graph and print the neighbours of vertex 2
 import java.util.*;
 public class Graphcodes {
     static class Edge{
