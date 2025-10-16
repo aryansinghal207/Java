@@ -207,7 +207,6 @@ public class Graphcodes {
         graph[2].add(new Edge(2, 4, 2));
         graph[3].add(new Edge(3, 1, 3));
         graph[3].add(new Edge(3, 2, 1));
-
         graph[4].add(new Edge(4, 5, 2));
         graph[5].add(new Edge(5, 4, 2));
         graph[5].add(new Edge(5, 6, 3));
