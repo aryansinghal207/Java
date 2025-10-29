@@ -117,7 +117,59 @@
 // }
 
 
-// N-Queen count.
+// // N-Queen count.
+// import java.util.*;
+// public class Backtracking{
+//     public static boolean issafe(char[][] board,int row,int col){
+//         for(int i=row-1;i>=0;i--){
+//             if(board[i][col]=='Q') return false;
+//         }
+//         for(int i=row-1,j=col-1;i>=0&&j>=0;i--,j--){
+//             if(board[i][j]=='Q') return false;
+//         }
+//         for(int i=row-1,j=col+1;i>=0&&j<board.length;i--,j++){
+//             if(board[i][j]=='Q') return false;
+//         }
+//         return true;
+//     }
+//     public static int nqueen(char[][] board,int row){
+//         if(row==board.length){
+//             return 1;
+//         }
+//         int count=0;
+//         for(int j=0;j<board.length;j++){
+//             if(issafe(board,row,j)){
+//                 board[row][j]='Q';
+//                 count+=nqueen(board,row+1);
+//                 board[row][j]='.';
+//             }
+//         }
+//         return count;
+//     }
+//     public static void printboard(char[][] board){
+//         System.out.println("----- Chess Board -----");
+//         for(int i=0;i<board.length;i++){
+//             for(int j=0;j<board.length;j++){
+//                 System.out.print(board[i][j]+" ");
+//             }
+//             System.out.println();
+//         }
+//         System.out.println();
+//     }
+//     public static void main(String[] args){
+//         int n=4;
+//         char board[][]=new char[n][n];
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<n;j++){
+//                 board[i][j]='.';
+//             }
+//         }
+//         System.out.print(nqueen(board,0));
+//     }
+// }
+
+
+// N-Queen
 import java.util.*;
 public class Backtracking{
     public static boolean issafe(char[][] board,int row,int col){
@@ -132,19 +184,18 @@ public class Backtracking{
         }
         return true;
     }
-    public static int nqueen(char[][] board,int row){
+    public static boolean nqueen(char[][] board,int row){
         if(row==board.length){
-            return 1;
+            return true;
         }
-        int count=0;
         for(int j=0;j<board.length;j++){
             if(issafe(board,row,j)){
                 board[row][j]='Q';
-                count+=nqueen(board,row+1);
+                if(nqueen(board,row+1)) return true;
                 board[row][j]='.';
             }
         }
-        return count;
+        return false;
     }
     public static void printboard(char[][] board){
         System.out.println("----- Chess Board -----");
@@ -164,6 +215,11 @@ public class Backtracking{
                 board[i][j]='.';
             }
         }
-        System.out.print(nqueen(board,0));
+        if(nqueen(board,0)){
+            System.out.println("Solution is possible");
+            printboard(board);
+        }else{
+            System.out.println("Solution is not possible.");
+        }
     }
 }
