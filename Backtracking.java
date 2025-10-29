@@ -225,18 +225,38 @@
 // }
 
 
-// Grid Codes ways
+// // Grid Codes ways TC : 2^(n+m);
+// import java.util.*;
+// public class Backtracking{
+//     public static int gridways(int i,int j,int n,int m){
+//         if(i==n-1 && j==m-1) return 1;
+//         else if(i==n || j==n) return 0;
+//         int w1=gridways(i+1,j,n,m);
+//         int w2=gridways(i,j+1,n,m);
+//         return w1+w2;
+//     }
+//     public static void main(String[] args){
+//         int n=3,m=3;
+//         System.out.println(gridways(0,0,n,m));
+//     }
+// }
+
+
+// Optimized Grid Code
 import java.util.*;
-public class Backtracking{
-    public static int gridways(int i,int j,int n,int m){
-        if(i==n-1 && j==m-1) return 1;
-        else if(i==n || j==n) return 0;
-        int w1=gridways(i+1,j,n,m);
-        int w2=gridways(i,j+1,n,m);
-        return w1+w2;
+public class Backtracking {
+    public static long nCr(int n, int r) {
+        long res = 1;
+        for (int i = 0; i < r; i++) {
+            res = res * (n - i) / (i + 1);
+        }
+        return res;
     }
-    public static void main(String[] args){
-        int n=3,m=3;
-        System.out.println(gridways(0,0,n,m));
+    public static long gridways(int n, int m) {
+        return nCr(n + m - 2, n - 1);
+    }
+    public static void main(String[] args) {
+        int n = 3, m = 3;
+        System.out.println(gridways(n, m));
     }
 }
