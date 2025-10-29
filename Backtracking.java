@@ -86,13 +86,11 @@
 //             printboard(board);
 //             return;
 //         }
-//         int count=0;
 //         for(int j=0;j<board.length;j++){
 //             if(issafe(board,row,j)){
 //                 board[row][j]='Q';
 //                 nqueen(board,row+1);
 //                 board[row][j]='.';
-//                 count++;
 //             }
 //         }
 //     }
