@@ -169,7 +169,7 @@
 // }
 
 
-// N-Queen
+// Print only one possible soltuion of N-Queen.
 import java.util.*;
 public class Backtracking{
     public static boolean issafe(char[][] board,int row,int col){
