@@ -288,7 +288,7 @@
 //         }
 //     }
 //     public static TreeInfo diameterOptimized(Node root) {
-//         if (root == null) {
+//         if(root == null) {
 //             return new TreeInfo(0, 0);
 //         }
 //         TreeInfo left = diameterOptimized(root.left);
