@@ -452,7 +452,7 @@
 // }
 
 
-// // lowest Coomon Ancestor with Time complexity and space complexity = O(n)
+// // lowest Common Ancestor with Time complexity and space complexity = O(n)
 // import java.util.*;
 // public class BinaryTreecode {
 //     public static class Node {
