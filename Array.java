@@ -118,8 +118,8 @@
 //     }
 // }
 
-// // In arrays when we copy a array normally by assigning operator it do the shallow copy and demerit of that is the changes made in the copy one also make chnges in the original ones 
-// // Soo to solve this issue we use .clone() keyword which do deepe copy.
+// // In arrays when we copy a array normally by assigning operator it do the shallow copy and demerit of that is the changes made in the copy one also make changes in the original ones 
+// // Soo to solve this issue we use .clone() keyword which do deep copy.
 // // In java we have java.util.array in which we have some predefined functions :
 // // 1) copy:- Arrays.copyof(arr,arr.length); or Arrays.copyof(arr,2,arr.length); 
 // import java.util.*;
