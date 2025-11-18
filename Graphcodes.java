@@ -26,7 +26,6 @@
 //         graph[2].add(new Edge(2, 4, 2));
 //         graph[3].add(new Edge(3, 1, 3));
 //         graph[3].add(new Edge(3, 2, 1));
-
 //         for(int i=0;i<graph[2].size();i++){
 //             Edge e = graph[2].get(i);
 //             System.out.println(e.dest);
@@ -243,58 +242,203 @@
 //     } 
 // }
 
-// Cycle Detection in Undirected Graph
+// // Cycle Detection in Undirected Graph
+// import java.util.*;
+// public class Graphcodes{
+//     public static class Edge{
+//         int src;
+//         int des;
+//         public Edge(int s , int d){
+//             this.src = s;
+//             this.des = d;
+//         }
+//     }
+//     public static void createGraph(ArrayList<Edge>[] graph){
+//         for(int i=0;i<graph.length;i++){
+//             graph[i]=new ArrayList<>();
+//         }
+//         graph[0].add(new Edge(0, 1));
+//         graph[0].add(new Edge(0, 2));
+//         graph[1].add(new Edge(1, 2));
+//         graph[1].add(new Edge(1, 0));
+//         graph[2].add(new Edge(2, 0));
+//         graph[2].add(new Edge(2, 1));
+//     }
+//     public static boolean isCycle(ArrayList<Edge>[] graph){
+//         boolean vis[]=new boolean[graph.length];
+//         for(int i=0;i<graph.length;i++){
+//             if(!vis[i]){
+//                 if(isCycleUtil(graph, vis, -1, i)){
+//                     return true;
+//                 }
+//             }
+//         }
+//         return false;
+//     }
+//     public static boolean isCycleUtil(ArrayList<Edge>[] graph, boolean vis[], int par, int curr){
+//         vis[curr]=true;
+//         for(int i=0;i<graph[curr].size();i++){
+//             Edge e=graph[curr].get(i);
+//             if(!vis[e.des]){
+//                 if(isCycleUtil(graph, vis, curr, e.des)){
+//                     return true;
+//                 }
+//             }
+//             else if(par!=e.des){
+//                 return true;
+//             }
+//         }
+//         return false; 
+//     }
+//     public static void main(String[] args){
+//         int V=3;
+//         ArrayList<Edge>[] graph=new ArrayList[V];
+//         createGraph(graph);
+//         System.out.println(isCycle(graph));
+//     }
+// }
+
+
+// import java.util.*;
+// public class Graphcodes{
+//     static class Edge{
+//         int src;
+//         int des;
+//         int wt;
+//         public Edge(int s,int d,int w){
+//             this.src=s;
+//             this.des=d;
+//             this.wt=w;
+//         }
+//     }
+//     public static void createGraph(ArrayList<Edge>[] graph){
+//         for(int i=0;i<graph.length;i++){
+//             graph[i]=new ArrayList<>();
+//         }
+//         graph[0].add(new Edge(0,2,5));
+//         graph[1].add(new Edge(1,0,4));
+//         graph[1].add(new Edge(1,3,3));
+//         graph[1].add(new Edge(1,4,6));
+//         graph[2].add(new Edge(2,1,5));
+//         graph[2].add(new Edge(2,0,2));
+//         graph[2].add(new Edge(2,4,5));
+//         graph[3].add(new Edge(3,1,5));
+//         // graph[0].add(new Edge(0,1,1));
+//         // graph[1].add(new Edge(1,0,1));
+
+//         // graph[0].add(new Edge(0,2,1));
+//         // graph[2].add(new Edge(2,0,1));
+
+//         // graph[1].add(new Edge(1,3,1));
+//         // graph[3].add(new Edge(3,1,1));
+
+//         // graph[2].add(new Edge(2,4,1));
+//         // graph[4].add(new Edge(4,2,1));
+//     }
+//     public static void bfs(ArrayList<Edge>[] graph,int st){
+//         boolean[] visited=new boolean[graph.length];
+//         Queue<Integer> queue=new LinkedList<>();
+//         queue.add(st);
+//         visited[st]=true;
+//         while(!queue.isEmpty()){
+//             int curr=queue.remove();
+//             System.out.print(curr+" ");
+//             for(Edge e:graph[curr]){
+//                 if(!visited[e.des]){
+//                     visited[e.des]=true;
+//                     queue.add(e.des);
+//                 }
+//             }
+//         }
+//         System.out.println();
+//     }
+//     public static void dfs(ArrayList<Edge>[] graph,int curr,boolean[] visited){
+//         visited[curr]=true;
+//         System.out.print(curr+" ");
+//         for(Edge e:graph[curr]){
+//             if(!visited[e.des]){
+//                 dfs(graph,e.des,visited);
+//             }
+//         }
+//     }
+//     public static boolean isCycle(ArrayList<Edge>[] graph,int curr,boolean[] visited,int parent){
+//         visited[curr]=true;
+//         for(Edge e:graph[curr]){
+//             if(!visited[e.des]){
+//                 if(isCycle(graph,e.des,visited,curr)) return true; 
+//             }
+//             else if(e.des!=parent) return true;
+//         }
+//         return false;
+//     }
+//     public static void main(String[] args){
+//         int V = 5;
+//         ArrayList<Edge>[] graph = new ArrayList[V];
+//         boolean[] vis = new boolean[V];
+//         createGraph(graph);
+//         bfs(graph, 0);
+//         dfs(graph,0,vis);
+//         System.out.println();
+//         boolean[] visited = new boolean[V];
+//         System.out.println("Cycle Present: " + isCycle(graph,0,visited,-1));
+//         System.out.println();
+//     }
+// }
+
 import java.util.*;
 public class Graphcodes{
     public static class Edge{
         int src;
         int des;
-        public Edge(int s , int d){
-            this.src = s;
-            this.des = d;
+        public Edge(int s,int d){
+            this.src=s;
+            this.des=d;
         }
     }
     public static void createGraph(ArrayList<Edge>[] graph){
         for(int i=0;i<graph.length;i++){
             graph[i]=new ArrayList<>();
         }
-        graph[0].add(new Edge(0, 1));
-        graph[0].add(new Edge(0, 2));
-        graph[1].add(new Edge(1, 2));
-        graph[1].add(new Edge(1, 0));
-        graph[2].add(new Edge(2, 0));
-        graph[2].add(new Edge(2, 1));
+        graph[0].add(new Edge(0,1));
+        graph[0].add(new Edge(0,2));
+        graph[1].add(new Edge(1,0));
+        graph[1].add(new Edge(1,3));
+        graph[2].add(new Edge(2,0));
+        graph[2].add(new Edge(2,4));
+        graph[3].add(new Edge(3,1));
+        // graph[3].add(new Edge(3,4));
+        graph[4].add(new Edge(4,2));
+        // graph[4].add(new Edge(4,3));
     }
-    public static boolean isCycle(ArrayList<Edge>[] graph){
-        boolean vis[]=new boolean[graph.length];
+    public static boolean isBipartite(ArrayList<Edge>[] graph){
+        int col[]=new int[graph.length];
         for(int i=0;i<graph.length;i++){
-            if(!vis[i]){
-                if(isCycleUtil(graph, vis, -1, i)){
-                    return true;
+            col[i]=-1;
+        }
+        Queue<Integer> q=new LinkedList<>();
+        for(int i=0;i<graph.length;i++){
+            if(col[i]==-1){
+                q.add(i);
+                col[i]=0;
+                while(!q.isEmpty()){
+                    int curr=q.remove();
+                    for(int j=0;j<graph[curr].size();j++){
+                        Edge e=graph[curr].get(j);
+                        if(col[e.des]==-1){
+                            int next=col[curr]==0?1:0;
+                            col[e.des]=next;
+                            q.add(e.des);
+                        }else if(col[e.des]==col[curr]) return false;
+                    }
                 }
             }
         }
-        return false;
-    }
-    public static boolean isCycleUtil(ArrayList<Edge>[] graph, boolean vis[], int par, int curr){
-        vis[curr]=true;
-        for(int i=0;i<graph[curr].size();i++){
-            Edge e=graph[curr].get(i);
-            if(!vis[e.des]){
-                if(isCycleUtil(graph, vis, curr, e.des)){
-                    return true;
-                }
-            }
-            else if(par!=e.des){
-                return true;
-            }
-        }
-        return false; 
+        return true;
     }
     public static void main(String[] args){
-        int V=3;
+        int V=5;
         ArrayList<Edge>[] graph=new ArrayList[V];
         createGraph(graph);
-        System.out.println(isCycle(graph));
+        System.out.print(isBipartite(graph));
     }
 }
