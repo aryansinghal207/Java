@@ -1,3 +1,5 @@
 
-        graph[1].add(new Edge(1, 3));
-        graph[2].add(new Edge(2, 4));
+        int[] result = dijkstra(V, adj, S);
+        System.out.println("Shortest distances from node " + S + " :");
+        for (int dist : result) {
+            System.out.print(dist + " ");

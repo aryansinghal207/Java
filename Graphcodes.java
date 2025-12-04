@@ -471,3 +471,58 @@
 
 
 // Dijkstra's Algorithm
+import java.util.*;
+class Pair {
+    int distance;
+    int node;
+    Pair(int distance, int node) {
+        this.distance = distance;
+        this.node = node;
+    }
+}
+class Graphcodes {
+    static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
+        PriorityQueue<Pair> pq =new PriorityQueue<>((x, y) -> x.distance - y.distance);
+        int[] dist = new int[V];
+        for (int i = 0; i < V; i++) dist[i] = (int)(1e9);
+        dist[S] = 0;
+        pq.add(new Pair(0, S));
+        while (!pq.isEmpty()) {
+            int dis = pq.peek().distance;
+            int node = pq.peek().node;
+            pq.remove();
+            for (int i = 0; i < adj.get(node).size(); i++) {
+                int adjNode = adj.get(node).get(i).get(0);
+                int edgeWeight = adj.get(node).get(i).get(1);
+                if (dis + edgeWeight < dist[adjNode]) {
+                    dist[adjNode] = dis + edgeWeight;
+                    pq.add(new Pair(dist[adjNode], adjNode));
+                }
+            }
+        }
+        return dist;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int V = sc.nextInt(); 
+        int E = sc.nextInt(); 
+        ArrayList<ArrayList<ArrayList<Integer>>> adj = new ArrayList<>();
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+        for (int i = 0; i < E; i++) {
+            int u = sc.nextInt();
+            int v = sc.nextInt();
+            int w = sc.nextInt();
+            adj.get(u).add(new ArrayList<>(Arrays.asList(v, w)));
+            adj.get(v).add(new ArrayList<>(Arrays.asList(u, w)));
+        }
+        int S = sc.nextInt();
+        int[] result = dijkstra(V, adj, S);
+        System.out.println("Shortest distances from node " + S + " :");
+        for (int dist : result) {
+            System.out.print(dist + " ");
+        }
+        System.out.println();
+    }
+}
