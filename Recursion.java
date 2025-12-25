@@ -17,23 +17,23 @@
 //     }
 // }
 
-import java.util.*;
-public class Recursion{
-    static void print(int cnt,int n){
-        if(cnt==n+1){
-            return;
-        }
-        System.out.println(cnt);
-        cnt++;
-        print(cnt,n); 
-    }
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int cnt=1;
-        print(1,n);
-    }
-}
+// import java.util.*;
+// public class Recursion{
+//     static void print(int cnt,int n){
+//         if(cnt==n+1){
+//             return;
+//         }
+//         System.out.println(cnt);
+//         cnt++;
+//         print(cnt,n); 
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         int cnt=1;
+//         print(1,n);
+//     }
+// }
 
 // // WAP to print from n to 1.
 // import java.util.*;
