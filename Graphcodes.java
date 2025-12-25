@@ -26,7 +26,7 @@
 //         graph[2].add(new Edge(2, 4, 2));
 //         graph[3].add(new Edge(3, 1, 3));
 //         graph[3].add(new Edge(3, 2, 1));
-//         for(int i=0;i<graph[2].size();i++){
+//         for(int i=0;i<graph[2].size();i++){]'
 //             Edge e = graph[2].get(i);
 //             System.out.println(e.dest);
 //         }
