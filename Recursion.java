@@ -52,21 +52,21 @@
 //     }
 // }
 // or
-import java.util.*;
-public class Recursion{
-    static void print(int cnt,int n){
-        if(cnt<n){
-            return;
-        }
-        System.out.print(cnt+" "); 
-        print(cnt-1,n);
-    }
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        print(n,1); 
-    }
-}
+// import java.util.*;
+// public class Recursion{
+//     static void print(int cnt,int n){
+//         if(cnt<n){
+//             return;
+//         }
+//         System.out.print(cnt+" "); 
+//         print(cnt-1,n);
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         print(n,1); 
+//     }
+// }
 
 
 // // WAP to print factorail of any number.
