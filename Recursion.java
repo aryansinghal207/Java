@@ -17,6 +17,7 @@
 //     }
 // }
 
+// // WAP to print the sequence 1 to n.
 // import java.util.*;
 // public class Recursion{
 //     static void print(int cnt,int n){
@@ -29,9 +30,10 @@
 //     public static void main(String[] args){
 //         Scanner sc=new Scanner(System.in);
 //         int n=sc.nextInt();
-//         print(1,n);
+//         print(1,n); 
 //     }
 // }
+
 
 // // WAP to print from n to 1.
 // import java.util.*;
