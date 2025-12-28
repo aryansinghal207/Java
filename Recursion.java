@@ -436,6 +436,7 @@
 //         printbin(3,0,"");
 //     }
 // }
+//
 // import java.util.*;
 // public class Recursion {
 //     public static void printbin(int n,int last,String str){
@@ -453,3 +454,4 @@
 //     }
 // }
 
+// Printint the subsequence of a array
