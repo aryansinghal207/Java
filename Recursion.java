@@ -455,3 +455,20 @@
 // }
 
 // Printint the subsequence of a array
+import java.util.*;
+public class Recursion{
+    static void printSubsequence(int index, int[] arr, List<Integer> list) {
+        if (index == arr.length) {
+            System.out.println(list);
+            return;
+        }
+        list.add(arr[index]);
+        printSubsequence(index + 1, arr, list);
+        list.remove(list.size() - 1);
+        printSubsequence(index + 1, arr, list);
+    }
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+        printSubsequence(0, arr, new ArrayList<>());
+    }
+}
