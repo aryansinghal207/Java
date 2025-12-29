@@ -454,21 +454,44 @@
 //     }
 // }
 
-// Printint the subsequence of a array
+// // Printint the subsequence of a array
+// import java.util.*;
+// public class Recursion{
+//     static void printSubsequence(int index, int[] arr, List<Integer> list) {
+//         if (index == arr.length) {
+//             System.out.println(list);
+//             return;
+//         }
+//         list.add(arr[index]);
+//         printSubsequence(index + 1, arr, list);
+//         list.remove(list.size() - 1);
+//         printSubsequence(index + 1, arr, list);
+//     }
+//     public static void main(String[] args) {
+//         int[] arr = {1, 2, 3};
+//         printSubsequence(0, arr, new ArrayList<>());
+//     }
+// }
+
+
+// // Print the target subsequence of a array
 import java.util.*;
 public class Recursion{
-    static void printSubsequence(int index, int[] arr, List<Integer> list) {
-        if (index == arr.length) {
-            System.out.println(list);
+    public static void printSubsequence(int index,int arr[],List<Integer> list,int sum,int target){
+        if(index==arr.length){
+            if(sum==target){
+                System.out.println(list);
+            }
             return;
         }
         list.add(arr[index]);
-        printSubsequence(index + 1, arr, list);
-        list.remove(list.size() - 1);
-        printSubsequence(index + 1, arr, list);
+        printSubsequence(index+1,arr,list,sum+arr[index],target);
+        list.remove(list.size()-1);
+        printSubsequence(index+1,arr,list,sum,target);
     }
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};
-        printSubsequence(0, arr, new ArrayList<>());
+        int target = 3;
+        printSubsequence(0, arr, new ArrayList<>(), 0, target);
     }
 }
