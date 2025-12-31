@@ -235,24 +235,26 @@
 //     }
 // }
 
-// Frog Jump(Memoization)
-import java.util.*;
-public class Dynamicprogrammingcodes{
-    public static int frogjump(int n,int[] arr,int[] dp){
-        if(n==0) return 0;
-        if(dp[n]!=-1) return dp[n];
-        int left=frogjump(n-1,arr,dp)+Math.abs(arr[n]-arr[n-1]);
-        int rigth=Integer.MAX_VALUE;
-        if(n>1){
-            rigth=frogjump(n-2,arr,dp)+Math.abs(arr[n]-arr[n-2]);
-        }
-        return dp[n]=Math.min(left,rigth);
-    }
-    public static void main(String[] args){
-        int n=5;
-        int[] arr={1,5,4,2,1};
-        int[] dp=new int[n];
-        Arrays.fill(dp,-1);
-        System.out.println(frogjump(n-1,arr,dp));
-    }
-}
+// // Frog Jump(Memoization)
+// import java.util.*;
+// public class Dynamicprogrammingcodes{
+//     public static int frogjump(int n,int[] arr,int[] dp){
+//         if(n==0) return 0;
+//         if(dp[n]!=-1) return dp[n];
+//         int left=frogjump(n-1,arr,dp)+Math.abs(arr[n]-arr[n-1]);
+//         int rigth=Integer.MAX_VALUE;
+//         if(n>1){
+//             rigth=frogjump(n-2,arr,dp)+Math.abs(arr[n]-arr[n-2]);
+//         }
+//         return dp[n]=Math.min(left,rigth);
+//     }
+//     public static void main(String[] args){
+//         int n=5;
+//         int[] arr={1,5,4,2,1};
+//         int[] dp=new int[n];
+//         Arrays.fill(dp,-1);
+//         System.out.println(frogjump(n-1,arr,dp));
+//     }
+// }
+
+// Frog Jump (Tabulation)
