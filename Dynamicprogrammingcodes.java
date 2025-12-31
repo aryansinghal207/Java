@@ -258,3 +258,24 @@
 // }
 
 // Frog Jump (Tabulation)
+import java.util.*;
+public class Dynamicprogrammingcodes{
+    public static int frogjump(int n,int[] arr){
+        int[] dp=new int[n];
+        dp[0]=0;
+        for(int i=1;i<n;i++){
+            int left=dp[i-1]+Math.abs(arr[i]-arr[i-1]);
+            int rigth=Integer.MAX_VALUE;
+            if(i>1){
+                rigth=dp[i-2]+Math.abs(arr[i]-arr[i-2]);
+            }
+            dp[i]=Math.min(left,rigth);
+        }
+        return dp[n-1];
+    }
+    public static void main(String[] args){
+        int n=5;
+        int[] arr={1,5,4,2,1};
+        System.out.println(frogjump(n,arr));
+    }
+}
