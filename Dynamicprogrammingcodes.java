@@ -280,27 +280,28 @@
 //     }
 // }
 
-// Frog Jump with k jumps using memoization
-import java.util.*;
-public class Dynamicprogrammingcodes{
-    public static int jump(int i,int[] arr,int[] dp,int k){
-        if(i==0) return 0;
-        if(dp[i]!=-1) return dp[i];
-        int min=Integer.MAX_VALUE;
-        for(int j=1;j<=k;j++){
-            if(i-j>=0){
-                int jump1=jump(i-j,arr,dp,k)+Math.abs(arr[i]-arr[i-j]);
-                min=Math.min(min,jump1);
-            }
-        }
-        return dp[i]=min;
-    }
-    public static void main(String[] args){
-        int arr[]={1,5,4,3,1};
-        int n=arr.length;
-        int dp[]=new int[n];
-        Arrays.fill(dp,-1);
-        int k=3;
-        System.out.println(jump(n-1,arr,dp,k));
-    }
-}
+// // Frog Jump with k jumps using memoization
+// import java.util.*;
+// public class Dynamicprogrammingcodes{
+//     public static int jump(int i,int[] arr,int[] dp,int k){
+//         if(i==0) return 0;
+//         if(dp[i]!=-1) return dp[i];
+//         int min=Integer.MAX_VALUE;
+//         for(int j=1;j<=k;j++){
+//             if(i-j>=0){
+//                 int jump1=jump(i-j,arr,dp,k)+Math.abs(arr[i]-arr[i-j]);
+//                 min=Math.min(min,jump1);
+//             }
+//         }
+//         return dp[i]=min;
+//     }
+//     public static void main(String[] args){
+//         int arr[]={1,5,4,3,1};
+//         int n=arr.length;
+//         int dp[]=new int[n];
+//         Arrays.fill(dp,-1);
+//         int k=3;
+//         System.out.println(jump(n-1,arr,dp,k));
+//     }
+// }
+
