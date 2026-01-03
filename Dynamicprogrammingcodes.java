@@ -332,3 +332,20 @@
 // }
 
 // Space Optimized code of Maximum Sum of Non-Adjacent Elements
+class Solution {
+    int findMaxSum(int arr[]) {
+        int n = arr.length;
+        if (n == 0) return 0;
+        int prev = arr[0];
+        int prev2 = 0;     
+        for (int i = 1; i < n; i++) {
+            int take = arr[i];
+            if (i > 1) take += prev2;
+            int notTake = prev;
+            int curi = Math.max(take, notTake);
+            prev2 = prev;
+            prev = curi;
+        }
+        return prev;
+    }
+}
