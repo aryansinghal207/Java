@@ -349,5 +349,3 @@
 //         return prev;
 //     }
 // }
-
-// Ninja Problem
