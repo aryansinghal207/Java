@@ -216,7 +216,7 @@
 //     }
 //     public int removefirst(){
 //         if(size==0){
-//             System.out.print("MyLinkedlistis empty");
+//             System.out.print("MyLinkedlist is empty");
 //             return Integer.MIN_VALUE;
 //         }else if(size==1){
 //             int val=head.data;
