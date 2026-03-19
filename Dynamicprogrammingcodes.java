@@ -375,31 +375,34 @@
 // }
 
 
-// Tabulation
-import java.util.*;
-public class Solution {
-    static int MOD = 1000000007;
-    public static int findWays(int[] num, int tar) {
-        int n = num.length;
-        int[][] dp = new int[n][tar + 1];
-        if (num[0] == 0) {
-            dp[0][0] = 2;
-        } else {
-            dp[0][0] = 1;
-            if (num[0] <= tar) {
-                dp[0][num[0]] = 1;
-            }
-        }
-        for (int i = 1; i < n; i++) {
-            for (int target = 0; target <= tar; target++) {
-                int nottake = dp[i - 1][target];
-                int take = 0;
-                if (num[i] <= target) {
-                    take = dp[i - 1][target - num[i]];
-                }
-                dp[i][target] = (take + nottake) % MOD;
-            }
-        }
-        return dp[n - 1][tar];
-    }
-}
+// // Tabulation
+// import java.util.*;
+// public class Solution {
+//     static int MOD = 1000000007;
+//     public static int findWays(int[] num, int tar) {
+//         int n = num.length;
+//         int[][] dp = new int[n][tar + 1];
+//         if (num[0] == 0) {
+//             dp[0][0] = 2;
+//         } else {
+//             dp[0][0] = 1;
+//             if (num[0] <= tar) {
+//                 dp[0][num[0]] = 1;
+//             }
+//         }
+//         for (int i = 1; i < n; i++) {
+//             for (int target = 0; target <= tar; target++) {
+//                 int nottake = dp[i - 1][target];
+//                 int take = 0;
+//                 if (num[i] <= target) {
+//                     take = dp[i - 1][target - num[i]];
+//                 }
+//                 dp[i][target] = (take + nottake) % MOD;
+//             }
+//         }
+//         return dp[n - 1][tar];
+//     }
+// }
+
+
+// 
