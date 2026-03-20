@@ -406,3 +406,28 @@
 
 
 // Count Partitions With Given Difference
+class Solution {
+    static int MOD = 1000000007;
+    public static int f(int idx, int[] num, int tar, int[][] dp) {
+        if (idx == 0) {
+            if (tar == 0 && num[0] == 0) return 2;
+            if (tar == 0 || num[0] == tar) return 1;
+            return 0;
+        }
+        if (dp[idx][tar] != -1) return dp[idx][tar];
+        int nottake = f(idx - 1, num, tar, dp);
+        int take = 0;
+        if (num[idx] <= tar) take = f(idx - 1, num, tar - num[idx], dp);
+        return dp[idx][tar] = (take + nottake) % MOD;
+    }
+    public int countPartitions(int[] arr, int diff) {
+        int n = arr.length;
+        int sum = 0;
+        for (int x : arr) sum += x;
+        if ((sum - diff) < 0 || (sum - diff) % 2 != 0) return 0;
+        int target = (sum - diff) / 2;
+        int[][] dp = new int[n][target + 1];
+        for (int[] row : dp) Arrays.fill(row, -1);
+        return f(n - 1, arr, target, dp);
+    }
+}
