@@ -405,7 +405,7 @@
 // }
 
 
-// Count Partitions With Given Difference
+// Count Partitions With Given Difference (Memoization)
 class Solution {
     static int MOD = 1000000007;
     public static int f(int idx, int[] num, int tar, int[][] dp) {
