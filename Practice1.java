@@ -81,17 +81,37 @@
 //     }
 // }
 
-// Second Largest in an array
+// // Second Largest in an array
+// import java.util.*;
+// public class Practice1{
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         int arr[]=new int[n];
+//         for(int i=0;i<n;i++){
+//             arr[i]=sc.nextInt();
+//         }
+//         Arrays.sort(arr);
+//         System.out.print(arr[n-2]);
+//     }
+// }
+
+// First Repeating Character in a String
 import java.util.*;
 public class Practice1{
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int arr[]=new int[n];
-        for(int i=0;i<n;i++){
-            arr[i]=sc.nextInt();
+        String s=sc.nextLine();
+        String st=s.toLowerCase();
+        HashMap<Character,Integer> map=new HashMap<>();
+        char[] str=st.toCharArray();
+        for(int i=0;i<str.length;i++){
+            if(map.containsKey(str[i])){
+                System.out.print(str[i]);
+                return;
+            }
+            map.put(str[i],1);
         }
-        Arrays.sort(arr);
-        System.out.print(arr[n-2]);
+        System.out.println("No repeating character");
     }
 }
