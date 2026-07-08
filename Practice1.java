@@ -96,22 +96,64 @@
 //     }
 // }
 
-// First Repeating Character in a String
+// // First Repeating Character in a String
+// import java.util.*;
+// public class Practice1{
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         String s=sc.nextLine();
+//         String st=s.toLowerCase();
+//         HashMap<Character,Integer> map=new HashMap<>();
+//         char[] str=st.toCharArray();
+//         for(int i=0;i<str.length;i++){
+//             if(map.containsKey(str[i])){
+//                 System.out.print(str[i]);
+//                 return;
+//             }
+//             map.put(str[i],1);
+//         }
+//         System.out.println("No repeating character");
+//     }
+// }
+
+// Remove node with n as value from a linkedlist 
 import java.util.*;
+class Node{
+    Node next;
+    int data;
+    public Node(int data){
+        this.data=data;
+        this.next=null;
+    }
+}
 public class Practice1{
+    public static Node remove(int n,Node head){
+        Node dummy=new Node(0);
+        dummy.next=head;
+        Node curr=dummy;
+        while(curr!=null && curr.next!=null){
+            if(curr.next.data==n) curr.next=curr.next.next;
+            else curr=curr.next;
+        }
+        return dummy.next;
+    }
+    public static void print(Node head){
+        while(head!=null){
+            System.out.print(head.data+" ");
+            head=head.next;
+        }
+    }
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
-        String s=sc.nextLine();
-        String st=s.toLowerCase();
-        HashMap<Character,Integer> map=new HashMap<>();
-        char[] str=st.toCharArray();
-        for(int i=0;i<str.length;i++){
-            if(map.containsKey(str[i])){
-                System.out.print(str[i]);
-                return;
-            }
-            map.put(str[i],1);
-        }
-        System.out.println("No repeating character");
+        int n=sc.nextInt();
+        Node head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = new Node(4);
+        head.next.next.next.next.next = new Node(4);
+        head.next.next.next.next.next.next = new Node(6);
+        head=remove(n,head);
+        print(head);
     }
 }
