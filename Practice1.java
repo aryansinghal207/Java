@@ -158,21 +158,46 @@
 //     }
 // }
 
-// DP fibonacci Code using memoization
+// // DP fibonacci Code using memoization
+// import java.util.*;
+// public class Practice1{
+//     private static int fibo(int n,int[] dp){
+//         if(n==0) return 0;
+//         if(n==1 || n==2) return 1;
+//         if(dp[n]!=0) return dp[n];
+//         dp[n]=fibo(n-1,dp)+fibo(n-2,dp);
+//         return dp[n];
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         int dp[]=new int[n+1];
+//         int ans=fibo(n,dp);
+//         System.out.print(ans);
+//     }
+// }
+
+// Frog 1
 import java.util.*;
 public class Practice1{
-    private static int fibo(int n,int[] dp){
-        if(n==0) return 0;
-        if(n==1 || n==2) return 1;
-        if(dp[n]!=0) return dp[n];
-        dp[n]=fibo(n-1,dp)+fibo(n-2,dp);
-        return dp[n];
+    public static int cost(int n,int[] arr,int[] dp){
+        if(n==0 || n<0) return 0;
+        if(dp[n]!=-1) return dp[n];
+        int left=cost(n-1,arr,dp)+Math.abs(arr[n]-arr[n-1]);
+        int right=0;
+        if(n>1) right=cost(n-2,arr,dp)+Math.abs(arr[n]-arr[n-2]);
+        dp[n]=Math.min(left,right);
+        return dp[n];    
     }
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        int dp[]=new int[n+1];
-        int ans=fibo(n,dp);
-        System.out.print(ans);
+        int arr[]=new int[n];
+        int[] dp=new int[n+1];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        Arrays.fill(dp,-1);
+        System.out.print(cost(n-1,arr,dp));
     }
 }
