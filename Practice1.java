@@ -116,44 +116,63 @@
 //     }
 // }
 
-// Remove node with n as value from a linkedlist 
+// // Remove node with n as value from a linkedlist 
+// import java.util.*;
+// class Node{
+//     Node next;
+//     int data;
+//     public Node(int data){
+//         this.data=data;
+//         this.next=null;
+//     }
+// }
+// public class Practice1{
+//     public static Node remove(int n,Node head){
+//         Node dummy=new Node(0);
+//         dummy.next=head;
+//         Node curr=dummy;
+//         while(curr!=null && curr.next!=null){
+//             if(curr.next.data==n) curr.next=curr.next.next;
+//             else curr=curr.next;
+//         }
+//         return dummy.next;
+//     }
+//     public static void print(Node head){
+//         while(head!=null){
+//             System.out.print(head.data+" ");
+//             head=head.next;
+//         }
+//     }
+//     public static void main(String[] args){
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         Node head = new Node(1);
+//         head.next = new Node(2);
+//         head.next.next = new Node(3);
+//         head.next.next.next = new Node(4);
+//         head.next.next.next.next = new Node(4);
+//         head.next.next.next.next.next = new Node(4);
+//         head.next.next.next.next.next.next = new Node(6);
+//         head=remove(n,head);
+//         print(head);
+//     }
+// }
+
+// DP fibonacci Code using memoization
 import java.util.*;
-class Node{
-    Node next;
-    int data;
-    public Node(int data){
-        this.data=data;
-        this.next=null;
-    }
-}
 public class Practice1{
-    public static Node remove(int n,Node head){
-        Node dummy=new Node(0);
-        dummy.next=head;
-        Node curr=dummy;
-        while(curr!=null && curr.next!=null){
-            if(curr.next.data==n) curr.next=curr.next.next;
-            else curr=curr.next;
-        }
-        return dummy.next;
-    }
-    public static void print(Node head){
-        while(head!=null){
-            System.out.print(head.data+" ");
-            head=head.next;
-        }
+    private static int fibo(int n,int[] dp){
+        if(n==0) return 0;
+        if(n==1 || n==2) return 1;
+        if(dp[n]!=0) return dp[n];
+        dp[n]=fibo(n-1,dp)+fibo(n-2,dp);
+        return dp[n];
     }
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(4);
-        head.next.next.next.next.next = new Node(4);
-        head.next.next.next.next.next.next = new Node(6);
-        head=remove(n,head);
-        print(head);
+        int dp[]=new int[n+1];
+        int ans=fibo(n,dp);
+        System.out.print(ans);
     }
 }
